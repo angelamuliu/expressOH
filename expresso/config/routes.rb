@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
+  resources :shops
+
+  resources :request_items
+
+  resources :items
+
+  resources :deliverers
+
+  resources :requests
+
+  resources :user_requests
+
+  resources :users
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
