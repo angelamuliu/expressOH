@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  requiest_id: 1
+  item: 
+
+two:
+  requiest_id: 1
+  item: 
