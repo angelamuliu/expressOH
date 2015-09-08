@@ -18,6 +18,14 @@ class ShopTest < ActiveSupport::TestCase
   should_not allow_value("bad").for(:state)
   should_not allow_value(10).for(:state)
 
+  should allow_value("03431").for(:zip)
+  should allow_value("15217").for(:zip)
+  should allow_value("15090").for(:zip)
+
+  should_not allow_value("3431").for(:zip)
+  should_not allow_value("152179").for(:zip)
+  should_not allow_value("profh").for(:zip)
+
 
   # #Scopes
   # should "shows shops in alphabetical order" do
