@@ -1,13 +1,19 @@
 <% if current_user %>
 	<h3>Welcome to expressOH!, <%= current_user.username %> </h3>
+	<%= button_to "Request an Order", "#", class: 'button', id: 'request_button' %>
+	<%= button_to "Claim an Order", "#", class: 'button', id: 'claim_button' %>
+	<div class="requests"></div>
+	<div class="deliveries"></div>
 <% else %>
-	<h3>Welcome to expressOH! </h3>
+	<div class="bean-background">
+		<%= image_tag "coffee-beans.jpg"%>	
+	</div>
+	<div class="intro">
+		<h2>Need Coffee?</h2>
+		<h2>No time?</h2>
+		<h3>Let's fix that.</h3>
+		<%= button_to "Sign Up", "#", class: 'button', id: 'request_button' %>
+		<%= button_to "Login", "#", class: 'button', id: 'claim_button' %>
+	</div>
 <% end %>
 
-<%= button_to "Request an Order", "#", class: 'button', id: 'request_button' %>
-<%= button_to "Claim an Order", "#", class: 'button', id: 'claim_button' %>
-<div class="requests"></div>
-
-
-
-<div class="deliveries"></div>

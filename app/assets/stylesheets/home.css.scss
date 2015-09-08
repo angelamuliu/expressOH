@@ -8,7 +8,22 @@
 }
 
 #request_button {
-
 	margin-top: 25px;
 	background-color: #ff3e55;	
+}
+
+.bean-background {
+	position: absolute;
+}
+
+.intro {
+	position: relative;
+	margin-top: 50px; 
+	margin-left: 25px;
+	h2 {
+		color: #FFFFFF;
+	}
+	h3 {
+		color: #d19871;
+	}
 }
