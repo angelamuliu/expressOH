@@ -12,8 +12,8 @@
 		<h2>Need Coffee?</h2>
 		<h2>No time?</h2>
 		<h3>Let's fix that.</h3>
-		<%= button_to "Sign Up", "#", class: 'button', id: 'request_button' %>
-		<%= button_to "Login", "#", class: 'button', id: 'claim_button' %>
+		<%= link_to "Sign Up", new_user_path, class: 'button', id: 'request_button' %>
+		<%= button_to "Login", "/login", class: 'button', id: 'claim_button' %>
 	</div>
 
 	<div class="explanation-1">
