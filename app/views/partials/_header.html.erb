@@ -1,0 +1,37 @@
+<div class="row">
+    <nav>
+    <ul class="unordered">
+        <li class="left">
+            <h1>
+                <a href="/"><%= image_tag('expressOH_Logo_SMALL.png') %></a>
+            </h1>
+        </li>
+        <li class="right">
+            <a href="#" id="gear">
+                <i class="fa fa-cog"></i>
+            </a>
+        </li>
+    </ul>
+    </nav>
+</div>
+
+<div id="gear_nav" class="hidden">
+    <div class="arrow-up right"></div>
+    <ul class="unordered">
+        <% if current_user %>
+        <li>
+            <a href="#">User settings</a>
+        </li>
+        <li>
+            <a href="/logout">Logout</a>
+        </li>
+        <% else %>
+        <li>
+            <a href="/users/new">Sign up</a>
+        </li>
+        <li>
+            <a href="/login">Login</a>
+        </li>
+        <% end %>
+    </ul>
+</div>

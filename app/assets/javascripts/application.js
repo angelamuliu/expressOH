@@ -17,3 +17,20 @@
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
+
+
+$(document).ready(function() {
+
+    // Navigation visibility toggle
+    $("#gear").click(function() {
+        var gear_nav = $("#gear_nav");
+        if (gear_nav.hasClass("hidden")) { // Show
+            gear_nav.slideDown(80);
+            gear_nav.removeClass("hidden");
+        } else { // Hide
+            gear_nav.slideUp(80).done(gear_nav.addClass("hidden"));
+        }
+    });
+
+})
+

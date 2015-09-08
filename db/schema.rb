@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20150908185059) do
+=======
+ActiveRecord::Schema.define(version: 20150907185823) do
+>>>>>>> ce8c3d608002d009d2efe724a55c58517b4400d6
 
   create_table "deliveries", force: true do |t|
     t.integer  "user_id"
@@ -40,6 +44,7 @@ ActiveRecord::Schema.define(version: 20150908185059) do
     t.integer  "shop_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   create_table "shops", force: true do |t|

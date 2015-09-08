@@ -1,0 +1,75 @@
+
+@import "shared_variables";
+
+// =====================================================
+// Styling for shared elements on multiple pages
+// =====================================================
+
+ul.unordered {
+    list-style: none;
+}
+
+.hidden {
+    display: none;
+}
+
+// =====================================================
+// NAV + LOGO 
+// =====================================================
+
+h1 {
+    margin: 0;
+    font-size:1.5em;
+    width: 80%;
+}
+
+nav {
+    border-bottom: 3px solid $paper;
+    padding: 12px;
+}
+nav:after {
+    content:'';
+    display:block;
+    clear: both;
+}
+nav ul { margin: 0; }
+
+#gear {
+    color: $cream;
+    padding: 0;
+    font-size: 35px;
+}
+#gear_nav {
+    position: absolute;
+    background-color: white;
+    right:0;
+    margin: 10px;
+    margin-top: 5px;
+    margin-right: 12px;
+}
+.arrow-up { // Triangle: https://css-tricks.com/snippets/css/css-triangle/
+    width: 0; 
+    height: 0; 
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 20px solid $paper;
+
+    position: absolute;
+    right: 5px;
+    margin-top: -20px;
+}
+#gear_nav ul {
+    margin:0;
+    border: 3px solid $paper;
+    border-bottom: 3px solid $cream;
+}
+#gear_nav li {
+    padding: 10px;
+    border-bottom: 1px solid $paper;
+}
+#gear_nav li:last-child { border-bottom: initial; }
+#gear_nav li:hover{ background-color: $light-grey; }
+#gear_nav a {  color: $pink; }
+#gear_nav a:hover { color: $cranberry; }
+
+

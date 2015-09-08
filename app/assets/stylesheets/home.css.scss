@@ -1,0 +1,29 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#claim_button {
+	background-color: #523b23
+}
+
+#request_button {
+	margin-top: 25px;
+	background-color: #ff3e55;	
+}
+
+.bean-background {
+	position: absolute;
+}
+
+.intro {
+	position: relative;
+	margin-top: 50px; 
+	margin-left: 25px;
+	h2 {
+		color: #FFFFFF;
+	}
+	h3 {
+		color: #d19871;
+	}
+}
