@@ -1,6 +1,6 @@
 <% if current_user %>
 	<h3>Welcome to expressOH!, <%= current_user.username %> </h3>
-	<%= button_to "Request an Order", "#", class: 'button', id: 'request_button' %>
+	<%= link_to "Request an Order", choose_shop_shops_path, class: 'button', id: 'request_button' %>
 	<%= button_to "Claim an Order", "#", class: 'button', id: 'claim_button' %>
 	<div class="requests"></div>
 	<div class="deliveries"></div>
