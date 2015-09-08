@@ -14,7 +14,12 @@ class RequestsController < ApplicationController
 
   # GET /requests/new
   def new
-    @request = Request.new
+    @request = Request.new()
+    @request.shop_id = params[:shop_id]
+
+    @shop = Shop.find(params[:shop_id])
+
+    @menu = @shop.items
   end
 
   # GET /requests/1/edit

@@ -5,7 +5,9 @@ Rails.application.routes.draw do
 
   resources :request_items
 
-  resources :shops
+  resources :shops do
+    get 'choose_shop', :on => :collection
+  end
 
   resources :items
 

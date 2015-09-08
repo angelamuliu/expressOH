@@ -61,6 +61,12 @@ class ShopsController < ApplicationController
     end
   end
 
+  # A page where a user chooses a shop and then is later redirected to choosing items to order
+  def choose_shop
+    @shops = Shop.all
+  end
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_shop
