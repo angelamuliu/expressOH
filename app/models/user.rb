@@ -1,7 +1,11 @@
 class User < ActiveRecord::Base
-	belongs_to :user
-	belongs_to :request
+	has_secure_password
+	
+	has_many :requests
+	has_many :deliveries
 
-	scope :choronological, -> { order("created_at") }
+	validates_presence_of :username, :email
+	validates :username, uniqueness: true	
+
 
 end
