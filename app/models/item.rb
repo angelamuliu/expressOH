@@ -8,7 +8,7 @@ class Item < ActiveRecord::Base
 
   #Validations
   validates :name, presence: true, uniqueness: true #case-sensitive e.g. allows yale and Yale
-  validates :address, presence: true, uniqueness: true
+  validates :price, presence: true
   validates :shop_id, presence: true, only_integer: true, greater_than: 1 
 
   # #Scopes
