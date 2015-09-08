@@ -1,0 +1,35 @@
+
+// =====================================================
+// Styling for shared elements on multiple pages
+// =====================================================
+
+ul.unordered {
+    list-style: none;
+}
+
+// =====================================================
+// NAV + LOGO 
+// =====================================================
+
+h1 {
+    margin: 0;
+    font-size:1.5em;
+    width: 80%;
+}
+
+nav {
+    border-bottom: 3px solid #ebe5e2;
+    padding: 12px;
+}
+nav:after {
+    content:'';
+    display:block;
+    clear: both;
+}
+nav ul { margin: 0; }
+
+#gear_nav {
+    color: #ecd4c4;
+    padding: 0;
+    font-size: 35px;
+}
