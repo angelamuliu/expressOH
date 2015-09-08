@@ -1,4 +1,8 @@
-<h3>Welcome to expressOH!, username </h3>
+<% if current_user %>
+	<h3>Welcome to expressOH!, <%= current_user.username %> </h3>
+<% else %>
+	<h3>Welcome to expressOH! </h3>
+<% end %>
 
 <%= button_to "Request an Order", "#", class: 'button', id: 'request_button' %>
 <%= button_to "Claim an Order", "#", class: 'button', id: 'claim_button' %>
