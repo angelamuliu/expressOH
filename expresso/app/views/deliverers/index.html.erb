@@ -1,0 +1,27 @@
+<h1>Listing deliverers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Request</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @deliverers.each do |deliverer| %>
+      <tr>
+        <td><%= deliverer.user_id %></td>
+        <td><%= deliverer.request_id %></td>
+        <td><%= link_to 'Show', deliverer %></td>
+        <td><%= link_to 'Edit', edit_deliverer_path(deliverer) %></td>
+        <td><%= link_to 'Destroy', deliverer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Deliverer', new_deliverer_path %>

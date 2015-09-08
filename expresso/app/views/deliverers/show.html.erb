@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @deliverer.user_id %>
+</p>
+
+<p>
+  <strong>Request:</strong>
+  <%= @deliverer.request_id %>
+</p>
+
+<%= link_to 'Edit', edit_deliverer_path(@deliverer) %> |
+<%= link_to 'Back', deliverers_path %>
