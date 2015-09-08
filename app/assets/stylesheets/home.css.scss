@@ -4,26 +4,32 @@
 
 
 #claim_button {
-	background-color: #523b23
+	background-color: #523b23;
+	width: 100%;
+	display: block;
 }
 
 #request_button {
 	margin-top: 25px;
-	background-color: #ff3e55;	
+	background-color: #ff3e55;
+	width: 100%;
+	display: block;	
 }
 
 .bean-background {
 	position: absolute;
+	max-height: 300px;
 }
 
 .intro {
 	position: relative;
 	margin-top: 50px; 
-	margin-left: 25px;
 	h2 {
 		color: #FFFFFF;
+		margin-left: 25px;
 	}
 	h3 {
+		margin-left: 25px;
 		color: #d19871;
 	}
 }
