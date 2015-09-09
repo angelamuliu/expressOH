@@ -1,20 +1,42 @@
+
 <% if current_user %>
-	<h3>Welcome to expressOH!, <%= current_user.username %> </h3>
-	<%= link_to "Request an Order", choose_shop_shops_path, class: 'button', id: 'request_button' %>
-	<%= button_to "Claim an Order", "#", class: 'button', id: 'claim_button' %>
-	<div class="requests"></div>
-	<div class="deliveries"></div>
+    <section id="welcome">
+        <h3>Welcome <%= current_user.username %>!</h3>
+        <%= link_to "Request an Order", choose_shop_shops_path, class: 'button', id: 'request_button' %>
+        <%= button_to "Claim an Order", "#", class: 'button', id: 'claim_button' %>
+    </section>
+
+    <section id="your_requests">
+        <h3>Your requests</h3>
+        <ul class="unordered">
+        <% current_user.requests.each do |request| %>
+            <li><span class="pink">(<%= request.shop.name %>)</span> 
+            <% if request.items.length == 1%>
+                <%= request.items.first.name %>
+            <% else %>
+                <% request.items.each do |item| %>
+                    <%= item.name %>
+                <% end %>
+            <% end %>
+            </li>
+        <% end %>
+        </ul>
+    </section>
+
+    <section id="your_deliveries">
+        <h3>Your deliveries</h3>
+    </section>
 <% else %>
-	<div class="bean-background">
-		<%= image_tag "coffee-beans.jpg"%>	
-	</div>
-	<div class="intro">
-		<h2>Need Coffee?</h2>
-		<h2>No time?</h2>
-		<h3>Let's fix that.</h3>
-		<%= link_to "Sign Up", new_user_path, class: 'button', id: 'request_button' %>
-		<%= button_to "Login", "/login", class: 'button', id: 'claim_button' %>
-	</div>
+    <div class="bean-background">
+        <%= image_tag "coffee-beans.jpg"%>  
+    </div>
+    <div class="intro">
+        <h2>Need Coffee?</h2>
+        <h2>No time?</h2>
+        <h3>Let's fix that.</h3>
+        <%= link_to "Sign Up", new_user_path, class: 'button', id: 'request_button' %>
+        <%= button_to "Login", "/login", class: 'button', id: 'claim_button' %>
+    </div>
 
 
 <% end %>

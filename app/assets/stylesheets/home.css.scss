@@ -2,18 +2,29 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import "shared_variables";
+
+#welcome {
+    background-color: $light-grey;
+}
 
 #claim_button {
-	background-color: #523b23;
+	background-color: $mud;
+    border-bottom: 3px solid $dark-chocolate;
 	width: 100%;
 	display: block;
 }
 
 #request_button {
 	margin-top: 25px;
-	background-color: #ff3e55;
+	background-color: $pink;
+    border-bottom: 3px solid $cranberry;
 	width: 100%;
 	display: block;	
+}
+
+#your_deliveries {
+    background-color: $light-grey;
 }
 
 .bean-background {

@@ -22,6 +22,18 @@ body {
     color: $chocolate;
 }
 
+section {
+    padding: 10px;
+}
+
+h2 {
+
+}
+
+h3 {
+
+}
+
 // =====================================================
 // NAV + LOGO 
 // =====================================================
@@ -84,5 +96,19 @@ nav ul { margin: 0; }
 #gear_nav li:hover{ background-color: $light-grey; }
 #gear_nav a {  color: $pink; }
 #gear_nav a:hover { color: $cranberry; }
+
+
+
+// =====================================================
+// FOOTER
+// =====================================================
+
+#footer {
+    background-color: $chocolate;
+}
+
+
+
+
 
 
