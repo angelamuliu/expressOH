@@ -28,8 +28,9 @@ $(document).ready(function() {
             gear_nav.slideDown(80);
             gear_nav.removeClass("hidden");
         } else { // Hide
-            gear_nav.slideUp(80).done(gear_nav.addClass("hidden"));
-        }
+            gear_nav.slideUp(80, function() {
+                gear_nav.addClass("hidden");
+        })}
     });
 
 })
