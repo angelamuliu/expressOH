@@ -11,12 +11,19 @@
 
 
 // Med/large
-@media only screen and (min-width:64em) {
+@media only screen and (min-width:30em) {
+
+    #menu .check_boxes.request_item_ids {
+        max-width: 500px;
+    }
 
 }
 
 // Small
-@media only screen and (max-width:64em) {
+@media only screen and (max-width:30em) {
 
+    #menu .check_boxes.request_item_ids {
+
+    }
 
 }

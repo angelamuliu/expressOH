@@ -18,24 +18,32 @@ class RequestsController < ApplicationController
     @request.shop_id = params[:shop_id]
 
     @shop = Shop.find(params[:shop_id])
-
     @menu = @shop.items
   end
 
   # GET /requests/1/edit
   def edit
+    @request = Request.find(params[:id])
+    @shop = Shop.find(@request.shop)
+    @menu = @shop.items
   end
 
   # POST /requests
   # POST /requests.json
   def create
-    @request = Request.new(request_params)
-
+    @request = Request.new({:shop_id => request_params[:shop_id], :user_id => current_user.id})
+    @item_ids = request_params[:item_ids].reject { |item_id| item_id.empty? }
     respond_to do |format|
-      if @request.save
+      if @item_ids.length > 0 and @request.save
+        @request.addItemsToRequest(request_params[:item_ids], @request.id)
         format.html { redirect_to @request, notice: 'Request was successfully created.' }
         format.json { render :show, status: :created, location: @request }
       else
+        if @item_ids.length < 1
+            @request.errors.add(:base, "You must order at least one item")
+        end
+        @shop = Shop.find(@request.shop)
+        @menu = @shop.items
         format.html { render :new }
         format.json { render json: @request.errors, status: :unprocessable_entity }
       end
@@ -74,6 +82,10 @@ class RequestsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def request_params
-      params.require(:request).permit(:shop_id)
+      params[:request][:item_ids] ||= [] # If somehow nil is passed in, we convert to empty array
+      params.require(:request).permit(:shop_id, :user_id, item_ids: [])
     end
+
+
+
 end
