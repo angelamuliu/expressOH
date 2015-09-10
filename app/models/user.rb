@@ -7,5 +7,7 @@ class User < ActiveRecord::Base
 	validates_presence_of :username, :email
 	validates :username, uniqueness: true	
 
+    # TODO: Add validation of email format
+
 
 end
