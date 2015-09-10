@@ -29,15 +29,14 @@
 <% else %>
     <div class="bean-background"></div>
     <div class="intro">
-        <h2>Need Coffee?</h2>
-        <h2>No time?</h2>
-        <h3>Let's fix that.</h3>
+        <section>
+            <h2>Need Coffee? <br />
+                No time?</h2>
+            <h3>Let's fix that.</h3>
+            <%= link_to "Sign Up", new_user_path, class: 'button', id: 'request_button' %>
+            <%= button_to "Login", "/login", class: 'button', id: 'claim_button' %>
+        </section>
     </div>
-
-    <section>
-        <%= link_to "Sign Up", new_user_path, class: 'button', id: 'request_button' %>
-        <%= button_to "Login", "/login", class: 'button', id: 'claim_button' %>
-    </section>
 
 
 <% end %>

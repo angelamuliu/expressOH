@@ -36,11 +36,10 @@
 
 .intro {
 	position: relative;
-	margin-top: 50px; 
-	h2 {
-		margin-left: 25px;
-	}
-	h3 {
-		margin-left: 25px;
-	}
+}
+.intro section {
+    padding: 25px;
+}
+.intro h2 {
+    margin-top: 25px;
 }
