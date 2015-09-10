@@ -18,8 +18,20 @@
 
 $(function(){ $(document).foundation(); });
 
+function resizeBeans() {
+    console.log($(window).width());
+    if ($(window).width() < 800) {
+        $("div.bean-background").height($(window).height() / 3);
+    } else {
+        $("div.bean-background").height($(window).height() / 2);
+    }
+    // $("div.intro").height(($("div.bean-background").height());
+}
+
 
 $(document).ready(function() {
+
+    resizeBeans();
 
     // Navigation visibility toggle
     $("#gear").click(function() {
@@ -31,6 +43,10 @@ $(document).ready(function() {
             gear_nav.slideUp(80, function() {
                 gear_nav.addClass("hidden");
         })}
+    });
+
+    $(window).bind('resize', function() {
+        resizeBeans();
     });
 
 })

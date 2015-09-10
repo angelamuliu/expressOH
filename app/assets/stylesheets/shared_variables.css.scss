@@ -1,8 +1,14 @@
 
 // =====================================================
-// Shared colors used throughout the app
+// Shared colors, fonts, resources used throughout the app
 // To use, add " @import "shared_variables"; " to top of file
 // =====================================================
+
+
+@font-face {
+    font-family: ChapparalPro-Regular;
+    src: url(../fonts/ChaparralPro-Regular.otf);
+}
 
 // Button color combos
 $dark-chocolate: #281808;

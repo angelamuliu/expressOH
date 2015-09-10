@@ -28,19 +28,19 @@
 }
 
 .bean-background {
-	position: absolute;
-	max-height: 300px;
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+    background-image: url("fadedbeans_med.jpg");
 }
 
 .intro {
 	position: relative;
 	margin-top: 50px; 
 	h2 {
-		color: #FFFFFF;
 		margin-left: 25px;
 	}
 	h3 {
 		margin-left: 25px;
-		color: #d19871;
 	}
 }

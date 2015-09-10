@@ -17,13 +17,20 @@
         max-width: 500px;
     }
 
+    .bean-background {
+        background-size: cover;
+    }
+
 }
 
 // Small
 @media only screen and (max-width:30em) {
 
     #menu .check_boxes.request_item_ids {
+    }
 
+    .bean-background {
+        background-size: 600px;
     }
 
 }
