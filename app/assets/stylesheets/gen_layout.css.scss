@@ -41,13 +41,34 @@ h2 {
 h3 {
     letter-spacing: 1px;
     font-family: ChapparalPro-Regular;
-    color: $cream;
+    color: $mud;
 }
 
 h4 {
     font-family: ChapparalPro-Regular;
     font-weight: 600;
     color: $mud;
+}
+
+// =====================================================
+// BUTTON STYLES
+// =====================================================
+
+.primary {
+    transition: background-color 0.3s ease;
+    padding: 0.5rem;
+    color: white;
+    background-color: $pink;
+    border: none;
+    border-bottom: 3px solid $cranberry;
+}
+.primary:hover {
+    background-color: $cranberry;
+}
+
+.secondary {
+    transition: background-color 0.3s ease;
+    padding: 0.5rem;
 }
 
 // =====================================================
@@ -113,6 +134,14 @@ nav ul { margin: 0; }
 #gear_nav a {  color: $pink; }
 #gear_nav a:hover { color: $cranberry; }
 
+
+// =====================================================
+// FORMS
+// =====================================================
+
+.field_with_errors {
+    background-color: $pale-pink;
+}
 
 
 // =====================================================

@@ -33,9 +33,9 @@
             <h2>Need Coffee? <br />
                 No time?</h2>
             <h3>Let's fix that.</h3>
-            <%= button_to "Sign Up", new_user_path, method: :get, class: "button primary", id: "request_button" %>
+            <%= link_to "Sign Up", new_user_path, class: "button primary", id: "request_button" %>
 
-            <%= button_to "Login", "/login", class: 'button', id: 'claim_button' %>
+            <%= button_to "Login", "/login", class: 'button', id: 'login_button' %>
         </section>
     </div>
 

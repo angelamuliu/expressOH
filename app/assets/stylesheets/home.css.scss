@@ -8,19 +8,20 @@
     background-color: $light-grey;
 }
 
-#claim_button {
+#login_button {
 	background-color: $mud;
     border-bottom: 3px solid $dark-chocolate;
 	width: 100%;
 	display: block;
 }
+#login_button:hover {
+    background-color: $dark-chocolate;
+}
 
 #request_button {
 	margin-top: 25px;
-	background-color: $pink;
-    border-bottom: 3px solid $cranberry;
 	width: 100%;
-	display: block;	
+	display: block;
 }
 
 #your_deliveries {
@@ -42,4 +43,7 @@
 }
 .intro h2 {
     margin-top: 25px;
+}
+.intro h3 {
+    color: $cream;
 }
