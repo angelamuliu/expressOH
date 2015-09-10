@@ -33,10 +33,29 @@
             <h2>Need Coffee? <br />
                 No time?</h2>
             <h3>Let's fix that.</h3>
-            <%= link_to "Sign Up", new_user_path, class: 'button', id: 'request_button' %>
+            <%= button_to "Sign Up", new_user_path, class: "button primary", id: "request_button" %>
+
             <%= button_to "Login", "/login", class: 'button', id: 'claim_button' %>
         </section>
     </div>
+
+    <section id="faq">
+        <h4>I need coffee.</h4>
+        <ol>
+            <li>Request coffee</li>
+            <li>Wait for someone to claim</li>
+            <li>Meet to recieve coffee</li>
+            <li>Pay in cash</li>
+        </ol>
+
+        <h4>I want to make money.</h4>
+        <ol>
+            <li>Claim requests on expressOH!</li>
+            <li>Buy claimed orders</li>
+            <li>Meet with recipient</li>
+            <li>Get paid cash by recipient</li>
+        </ol>
+    </section>
 
 
 <% end %>
