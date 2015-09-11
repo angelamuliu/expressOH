@@ -54,12 +54,18 @@ h4 {
 // BUTTON STYLES
 // =====================================================
 
-.primary {
+.button {
     transition: background-color 0.3s ease;
     padding: 0.5rem;
     color: white;
-    background-color: $pink;
     border: none;
+}
+.button:hover {
+    color: $light-grey;
+}
+
+.primary {
+    background-color: $pink;
     border-bottom: 3px solid $cranberry;
 }
 .primary:hover {
@@ -67,8 +73,19 @@ h4 {
 }
 
 .secondary {
-    transition: background-color 0.3s ease;
-    padding: 0.5rem;
+    background-color: $milk-coffee;
+    border-bottom: 3px solid $mocha;
+}
+.secondary:hover {
+    background-color: $mocha;
+}
+
+.tertiary {
+    background-color: $mud;
+    border-bottom: 3px solid $dark-chocolate;
+}
+.tertiary:hover {
+    background-color: $dark-chocolate;
 }
 
 // =====================================================
