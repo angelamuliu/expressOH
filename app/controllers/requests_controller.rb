@@ -5,6 +5,7 @@ class RequestsController < ApplicationController
   # GET /requests.json
   def index
     @requests = Request.all
+    @unexpired_requests = Request.requested_within_ the_hr(1.hour)
   end
 
   # GET /requests/1
