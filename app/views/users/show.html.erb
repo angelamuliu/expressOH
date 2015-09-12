@@ -11,8 +11,8 @@
 </p>
 
 <p>
-  <strong>My Requests</strong>
-  <%= @user.requests %>
+  <strong>Number of Requests: </strong>
+  <%= @user.requests.count%>
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
