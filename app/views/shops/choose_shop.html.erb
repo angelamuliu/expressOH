@@ -6,13 +6,13 @@
     <% else %>
         <ul class="unordered">
         <% @shops.each do |shop| %>
-            <div class="location">
-                <%= link_to(new_request_path(:shop_id => shop.id)) do %>
+            <%= link_to(new_request_path(:shop_id => shop.id)) do %>
+                <div class="location">
                     <%= image_tag shop.image_url,  height: '100', width: '100' %>
                     <h5><%= shop.name %></h5>
                     <h6><%= shop.address %></h6>
-                <% end %>
-            </div>
+                </div>
+            <% end %>
         <% end %>
         </ul>
     <% end %>
