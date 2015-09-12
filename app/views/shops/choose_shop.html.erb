@@ -1,19 +1,21 @@
+<div class="choose-shop">
+    <h3>Choose Location</h3>
 
-<h3>Choose Location</h3>
-
-<% if @shops.empty? %>
-    <p> Sorry! Please check back later. We have not yet entered any shop menus in yet. </p>
-<% else %>
-    <ul class="unordered">
-    <% @shops.each do |shop| %>
-        <%= link_to(new_request_path(:shop_id => shop.id)) do %>
-            <li>
-                <h3><%= shop.name %></h3>
-                <p><%= shop.address %></p>
-            </li>
+    <% if @shops.empty? %>
+        <p> Sorry! Please check back later. We have not yet entered any shop menus in yet. </p>
+    <% else %>
+        <ul class="unordered">
+        <% @shops.each do |shop| %>
+            <div class="location">
+                <%= link_to(new_request_path(:shop_id => shop.id)) do %>
+                    <%= image_tag shop.image_url,  height: '100', width: '100' %>
+                    <h5><%= shop.name %></h5>
+                    <h6><%= shop.address %></h6>
+                <% end %>
+            </div>
         <% end %>
+        </ul>
     <% end %>
-    </ul>
-<% end %>
 
-<%= link_to "Return to Home", "www.google.com", class: 'button radius' %> 
+    <%= link_to "Return to Home", "/", class: 'button radius' %> 
+</div>
