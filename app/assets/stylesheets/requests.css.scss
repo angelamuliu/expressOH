@@ -9,8 +9,13 @@
     float: right;
 }
 
-#menu {
+#menu  {
     background-color: $light-grey;
+}
+section#recent_requests {
+    background-color: $light-grey;
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
 #menu li:after { // Clear float

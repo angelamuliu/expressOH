@@ -1,27 +1,29 @@
 
 <section>
-
     <h3>Requests for <span class="pink"><%= @shop.name %></span></h3>
+</section>
 
-    <ul class="unordered">
-    <% @shop.requests.each do |request| %>
-        <li>
-            <span class="pink">(<%= request.format_cost(request.total_cost) %>)</span>
-            <% if request.items.size < 2 %>
-                <%= request.items[0].name%>
-            <% else %>
-                <ul class="inline">
-                <% request.items.each do |item| %>
-                    <li><%= item.name %></li>
+<section id="recent_requests">
+        <ul class="unordered lined">
+        <% @shop.requests.each do |request| %>
+            <li>
+                <span class="pink">(<%= request.format_cost(request.total_cost) %>)</span>
+                <% if request.items.size < 2 %>
+                    <%= request.items[0].name%>
+                <% else %>
+                    <ul class="inline">
+                    <% request.items.each do |item| %>
+                        <li><%= item.name %></li>
+                    <% end %>
+                    </ul>
                 <% end %>
-                </ul>
-            <% end %>
-            <br />
-            <%= request.minute_age() %> by "<%= request.user.username %>"
-        </li>
-    <% end %>
-    </ul>
+                <br />
+                <%= request.minute_age() %> by "<%= request.user.username %>"
+            </li>
+        <% end %>
+        </ul>
+</section>
 
+<section>
     <%= link_to 'Return to home', "/", :class => "button secondary" %>
-
 </section>
