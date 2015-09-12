@@ -79,6 +79,19 @@ class RequestsController < ApplicationController
     @menu = @shop.items
   end
 
+  # AJAX call when the 'claim' button clicked when a person is looking through requests
+  def claim
+    request = Request.find(params[:id])
+    deliverer = User.find(params[:deliverer_id])
+    @dom_id = params[:dom_id]
+
+    # Create delivery with current_user and request
+    @delivery = Delivery.new
+    @delivery.request = request
+    @delivery.user = deliverer
+    @delivery.save!
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_request

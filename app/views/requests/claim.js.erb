@@ -1,0 +1,7 @@
+
+
+var li_el = $(<%= @dom_id %>);
+var buttonlink_el = li_el.children("a");
+buttonlink_el.slideUp(150, function() {
+    buttonlink_el.replaceWith("<i class='pink right fa fa-check'></i>");
+});
