@@ -13,7 +13,9 @@ Rails.application.routes.draw do
 
   resources :requests
 
-  resources :users
+  resources :users do
+    get 'rate', on: :member
+  end
 
   root 'home#index'
 

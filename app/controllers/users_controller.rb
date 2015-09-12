@@ -22,6 +22,10 @@ class UsersController < ApplicationController
   def edit
   end
 
+  def rate
+    @user = User.find(params[:id])
+  end
+
   # POST /users
   # POST /users.json
   def create
@@ -42,7 +46,11 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1.json
   def update
     respond_to do |format|
-      if @user.update(user_params)
+      if user_params[:total_rating]
+        new_total_rating = @user.total_rating + user_params[:total_rating].to_i
+        @user.update_attributes(total_rating: new_total_rating, times_ranked: @user.times_ranked += 1)
+      end
+      if @user.update(user_params.except(:total_rating))
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
         format.json { render :show, status: :ok, location: @user }
       else
@@ -70,6 +78,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:username, :email, :password, :password_confirmation)
+      params.require(:user).permit(:username, :email, :password, :password_confirmation, :total_rating)
     end
 end
