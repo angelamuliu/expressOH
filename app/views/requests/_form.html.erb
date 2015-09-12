@@ -15,7 +15,7 @@
 
   <ul class="unordered" id="menu">
     <%= f.input :item_ids, collection: @menu, as: :check_boxes,
-    :label_method => lambda { |item| "<li><span class=\"pink\">(#{item.price})</span> #{item.name}</li>".html_safe }, :label => ""  %>
+    :label_method => lambda { |item| "<li><span class=\"pink\">(#{number_to_currency(item.price)})</span> #{item.name}</li>".html_safe }, :label => ""  %>
   </ul>
 
   <div class="actions">

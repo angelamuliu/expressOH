@@ -15,5 +15,8 @@ class Item < ActiveRecord::Base
   scope :alphabetical, -> { order('name') }
 
   #Methods
+  def cost
+    
+  end
 
 end
