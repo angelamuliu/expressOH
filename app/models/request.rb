@@ -4,13 +4,15 @@ class Request < ActiveRecord::Base
     belongs_to :user
     belongs_to :shop
     has_many :request_items
-    has_many :items, :through => :request_items
-
+    has_many :items, :through => :request_items 
+    has_one :delivery
+    
     # Validations
     validates_presence_of :shop_id
 
     # Scopes
     scope :chronological, order(:created_at)
+    scope :requested_within_the_hr, ->(hr_span) { where("created_at > ?", Time.now-hr_span) }
 
     # Methods
 

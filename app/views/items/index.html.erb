@@ -1,5 +1,6 @@
+&nbsp;
 <h1>Listing items</h1>
-
+&nbsp;
 <table>
   <thead>
     <tr>
@@ -14,11 +15,9 @@
     <% @items.each do |item| %>
       <tr>
         <td><%= item.name %></td>
-        <td><%= item.price %></td>
-        <td><%= item.shop_id %></td>
+        <td><%= number_to_currency(item.price) %></td>
+        <td><%= item.shop.name %></td>
         <td><%= link_to 'Show', item %></td>
-        <td><%= link_to 'Edit', edit_item_path(item) %></td>
-        <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
