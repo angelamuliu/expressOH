@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150912195841) do
+ActiveRecord::Schema.define(version: 20150912204538) do
 
   create_table "deliveries", force: true do |t|
     t.integer  "user_id"
@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 20150912195841) do
     t.datetime "updated_at"
     t.boolean  "active",          default: true
     t.integer  "total_rating",    default: 0
+    t.integer  "times_ranked",    default: 0
   end
 
 end

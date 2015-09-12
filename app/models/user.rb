@@ -9,10 +9,10 @@ class User < ActiveRecord::Base
 
 	def ranking
 		rank = 0
-		if self.deliveries.count == 0
+		if self.times_ranked == 0
 			rank = 0
 		else
-			rank = self.total_rating / self.deliveries.count.to_f
+			rank = self.total_rating / self.times_ranked.to_f
 		end
 		return rank
 	end
