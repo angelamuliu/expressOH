@@ -16,7 +16,9 @@ Rails.application.routes.draw do
   end
   post 'claim_request/:id' => 'requests#claim', as: :claim_request
 
-  resources :users
+  resources :users do
+    get 'rate', on: :member
+  end
 
   root 'home#index'
 

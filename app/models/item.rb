@@ -4,7 +4,6 @@ class Item < ActiveRecord::Base
 
   #Relationships
   has_many :request_items
-  has_many :items, through: :request_items
   belongs_to :shop
 
   #Validations

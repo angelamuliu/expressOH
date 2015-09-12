@@ -11,9 +11,16 @@
 </p>
 
 <p>
-  <strong>My Requests</strong>
-  <%= @user.requests %>
+  <strong>Number of Requests: </strong>
+  <%= @user.requests.count%>
 </p>
+
+<p>
+  <strong>Total Ranking: </strong>
+  <%= @user.ranking %>
+</p>
+
+<%= link_to "Rate", rate_user_path, class: 'button' %>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

@@ -1,0 +1,4 @@
+<%= simple_form_for @user do |f| %>
+	<%= f.input :total_rating, collection: 1..5, label: 'How was your experience out of 5?' %>
+	<%= f.submit "Rate", class: 'button primary' %>
+<% end %>
