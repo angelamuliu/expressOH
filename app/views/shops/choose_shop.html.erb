@@ -5,8 +5,10 @@
     <p> Sorry! Please check back later. We have not yet entered any shop menus in yet. </p>
 <% else %>
     <ul class="unordered">
+        <%= params[:action_path] %>
     <% @shops.each do |shop| %>
-        <%= link_to(new_request_path(:shop_id => shop.id)) do %>
+        <%# We are passed in an action_path for what we want to do for each shop. Currently 2 cases -> Either start ordering (new_request_path) or browse requests from a shop (browse_requests_requests_path) %>
+        <%= link_to params[:action_path] + "?shop_id=" + shop.id.to_s() do %>
             <li>
                 <h3><%= shop.name %></h3>
                 <p><%= shop.address %></p>
