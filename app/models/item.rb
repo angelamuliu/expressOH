@@ -10,7 +10,7 @@ class Item < ActiveRecord::Base
   #Validations
   validates :name, presence: true, uniqueness: true #case-sensitive e.g. allows yale and Yale
   validates :price, presence: true
-  validates :shop_id, presence: true, only_integer: true, greater_than: 1 
+  validates :shop_id, presence: true, numericality: { only_integer: true, greater_than: 0 }
 
   # #Scopes
   scope :alphabetical, -> { order('name') }

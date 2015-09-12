@@ -11,12 +11,36 @@
 
 
 // Med/large
-@media only screen and (min-width:64em) {
+@media only screen and (min-width:30em) {
+
+    #menu .check_boxes.request_item_ids {
+        max-width: 500px;
+    }
+
+    .bean-background {
+        background-size: cover;
+        height: 450px;
+    }
+
+    div.intro {
+        height: 450px;
+    }
 
 }
 
 // Small
-@media only screen and (max-width:64em) {
+@media only screen and (max-width:30em) {
 
+    #menu .check_boxes.request_item_ids {
+    }
+
+    .bean-background {
+        background-size: 600px;
+        height: 400px;
+    }
+
+    div.intro {
+        height: 400px;
+    }
 
 }

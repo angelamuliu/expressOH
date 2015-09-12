@@ -5,12 +5,43 @@
 // Styling for shared elements on multiple pages
 // =====================================================
 
+.row {
+    margin: 0;
+    max-width: 100%;
+}
+
 ul.unordered {
     list-style: none;
+    margin: 0;
 }
 
 .hidden {
     display: none;
+}
+
+.pink {
+    color: $pink;
+}
+
+body {
+    color: $chocolate;
+}
+
+section {
+    padding: 10px;
+}
+
+h2 {
+    letter-spacing: 1px;
+    color: white;
+    font-family: ChapparalPro-Regular;
+    font-weight: 600;
+}
+
+h3 {
+    letter-spacing: 1px;
+    font-family: ChapparalPro-Regular;
+    color: $cream;
 }
 
 // =====================================================
@@ -22,7 +53,10 @@ h1 {
     font-size:1.5em;
     width: 80%;
 }
-
+#nav_container {
+    margin: 0;
+    max-width: 100%;
+}
 nav {
     border-bottom: 3px solid $paper;
     padding: 12px;
@@ -72,5 +106,19 @@ nav ul { margin: 0; }
 #gear_nav li:hover{ background-color: $light-grey; }
 #gear_nav a {  color: $pink; }
 #gear_nav a:hover { color: $cranberry; }
+
+
+
+// =====================================================
+// FOOTER
+// =====================================================
+
+#footer {
+    background-color: $chocolate;
+}
+
+
+
+
 
 

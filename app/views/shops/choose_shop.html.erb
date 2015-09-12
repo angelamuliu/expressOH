@@ -1,0 +1,19 @@
+
+<h3>Choose Location</h3>
+
+<% if @shops.empty? %>
+    <p> Sorry! Please check back later. We have not yet entered any shop menus in yet. </p>
+<% else %>
+    <ul class="unordered">
+    <% @shops.each do |shop| %>
+        <%= link_to(new_request_path(:shop_id => shop.id)) do %>
+            <li>
+                <h3><%= shop.name %></h3>
+                <p><%= shop.address %></p>
+            </li>
+        <% end %>
+    <% end %>
+    </ul>
+<% end %>
+
+<%= link_to "Return to Home", "www.google.com", class: 'button radius' %> 
