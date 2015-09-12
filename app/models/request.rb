@@ -11,6 +11,7 @@ class Request < ActiveRecord::Base
 
     # Scopes
     scope :chronological, order(:created_at)
+    scope :requested_within_the_hr, ->(one_hr_span) { where("created_at > ?", Time.now-one_hr_span) }
 
     # Methods
 
