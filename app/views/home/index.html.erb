@@ -13,9 +13,13 @@
             <li><span class="pink">(<%= request.shop.name %>)</span> 
             <% if request.items.length == 1%>
                 <%= request.items.first.name %>
+                <%= "Requested " + time_ago_in_words(request.items.first.created_at) + ' ago' %>
+                <%= request.delivery.nil? ? 'Unclaimed' : "Being delivered by: " + request.delivery.user.username %>
             <% else %>
                 <% request.items.each do |item| %>
                     <%= item.name %>
+                    <%= "Requested " + time_ago_in_words(item.created_at) + ' ago' %>
+                    <%= request.delivery.nil? ? 'Unclaimed' : "Being delivered by: " + request.delivery.user.username %>
                 <% end %>
             <% end %>
             </li>

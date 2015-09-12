@@ -4,8 +4,9 @@ class Request < ActiveRecord::Base
     belongs_to :user
     belongs_to :shop
     has_many :request_items
-    has_many :items, :through => :request_items
-
+    has_many :items, :through => :request_items 
+    has_one :delivery
+    
     # Validations
     validates_presence_of :shop_id
 
