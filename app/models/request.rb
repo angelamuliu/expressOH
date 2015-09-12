@@ -14,6 +14,11 @@ class Request < ActiveRecord::Base
 
     # Methods
 
+    # Returns in minutes how long ago this request was created as a nice string
+    def minute_age()
+        return ((Time.now - created_at) % 60).round().to_s + " minutes ago"
+    end
+
     # Returns the total cost of items ordered in this request
     def total_cost()
         total_cost = 0

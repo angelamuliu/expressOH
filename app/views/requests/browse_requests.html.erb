@@ -6,7 +6,7 @@
     <ul class="unordered">
     <% @shop.requests.each do |request| %>
         <li>
-            <span class="pink"><%= request.format_cost(request.total_cost) %></span>
+            <span class="pink">(<%= request.format_cost(request.total_cost) %>)</span>
             <% if request.items.size < 2 %>
                 <%= request.items[0].name%>
             <% else %>
@@ -16,6 +16,8 @@
                 <% end %>
                 </ul>
             <% end %>
+            <br />
+            <%= request.minute_age() %> by "<%= request.user.username %>"
         </li>
     <% end %>
     </ul>
