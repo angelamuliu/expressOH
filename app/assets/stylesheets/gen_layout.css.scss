@@ -14,14 +14,13 @@ ul.unordered {
     list-style: none;
     margin: 0;
 }
-
-ul.lined li:first-child {
+ul.lined {
     border-top: 1px solid $cream;
 }
 ul.lined li {
     padding-top: 1em;
     padding-bottom: 1em;
-    border-top: 1px solid $granite;
+    border-bottom: 1px solid $granite;
 }
 
 ul.inline { 
@@ -99,6 +98,7 @@ h4 {
 }
 .button.secondary:hover {
     background-color: $mocha;
+    color: $light-grey;
 }
 
 .tertiary {

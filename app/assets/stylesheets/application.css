@@ -13,8 +13,8 @@
  *= require foundation_and_overrides
  *= require font-awesome
  *= require shared_variables
- *= require responsive
  *= require_tree .
+ *= require responsive
  *= require_self
 
  */

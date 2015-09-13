@@ -6,14 +6,13 @@
 
 
 #menu input.check_boxes {
-    float: right;
+    float: left;
+    margin: 0;
+    margin-top: 15px;
+    margin-right: 10px;
 }
 
-#menu  {
-    background-color: $light-grey;
-}
-
-section#recent_requests {
+section#recent_requests, section#menu {
     background-color: $light-grey;
     padding-top: 0;
     padding-bottom: 0;
@@ -39,30 +38,7 @@ section#recent_requests {
     font-size: 25px;
 }
 
-
 #menu li {
     padding: 10px;
 }
 
-.check_boxes.optional {
-	margin-top: 15px;
-    margin-bottom: 10px;
-}
-
-
-// TO FIX: Styling
-// #menu label {
-//     border-bottom: 1px solid red;
-// }
-
-// #menu label:last-child {
-//     border-bottom: initial;
-// }
-
-// #menu:after { // Clear float
-//     content: "."; 
-//     visibility: hidden; 
-//     display: block; 
-//     height: 0; 
-//     clear: both;
-// }

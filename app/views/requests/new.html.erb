@@ -1,5 +1,15 @@
-<h3>Requesting from <%= @shop.name %></h3>
+<section>
+    <h3>Requesting from <span class="pink"><%= @shop.name %></span></h3>
+</section>
 
-<%= render 'form' %>
-
-<%= link_to 'Back', choose_shop_shops_path(:action_path => new_request_path), class: 'button secondary' %>
+<% if @menu.size > 0 %>
+    <%= render 'form' %>
+<% else %>
+    <section>
+        <p>
+            No items from this location yet... Check back soon!
+            <br />
+            <%= link_to 'Back', choose_shop_shops_path(:action_path => new_request_path), class: 'button secondary' %>
+        </p>
+    </section>
+<% end %>
