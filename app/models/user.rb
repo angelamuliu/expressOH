@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
 	validates_presence_of :username, :email
 	validates :username, uniqueness: true	
 
+    # TODO: Add validation of email format
+
 	def ranking
 		rank = 0
 		if self.times_ranked == 0
@@ -16,6 +18,5 @@ class User < ActiveRecord::Base
 		end
 		return rank
 	end
-
 
 end

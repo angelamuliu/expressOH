@@ -11,7 +11,10 @@ Rails.application.routes.draw do
 
   resources :items
 
-  resources :requests
+  resources :requests do
+    get 'browse_requests', :on => :collection
+  end
+  post 'claim_request/:id' => 'requests#claim', as: :claim_request
 
   resources :users do
     get 'rate', on: :member

@@ -1,0 +1,38 @@
+
+<section>
+    <h3>Requests for <span class="pink"><%= @shop.name %></span></h3>
+</section>
+
+<% if @requests.size < 1 %>
+    <section>
+        No requests from this location yet... Check back soon!
+    </section>
+<% else %>
+<section id="recent_requests">
+    <ul class="unordered lined">
+    <% @requests.each do |request| %>
+        <li id="request_<%= request.id %>">
+            <div class="request_info left">
+                <span class="pink">(<%= request.format_cost(request.total_cost) %>)</span>
+                <% if request.items.size < 2 %>
+                    <%= request.items[0].name%>
+                <% else %>
+                    <ul class="inline">
+                    <% request.items.each do |item| %>
+                        <li><%= item.name %></li>
+                    <% end %>
+                    </ul>
+                <% end %>
+                <br />
+                <%= request.minute_age() %> by "<%= request.user.username %>"
+            </div>
+            <%= link_to "Claim", claim_request_path(id: request.id, deliverer_id: current_user.id, dom_id: "request_#{request.id}"), remote: true, method: 'post', :class => "button primary right" %>
+        </li>
+    <% end %>
+    </ul>
+</section>
+<% end %>
+
+<section>
+    <%= link_to 'Return to home', "/", :class => "button secondary" %>
+</section>

@@ -1,28 +1,32 @@
 <%= simple_form_for @request do |f| %>
-  <% if @request.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@request.errors.count, "error") %> prohibited this request from being saved:</h2>
+    <section id="menu">
+        <% if @request.errors.any? %>
+            <div id="error_explanation">
+                <h2><%= pluralize(@request.errors.count, "error") %> prohibited this request from being saved:</h2>
+                <ul>
+                    <% @request.errors.full_messages.each do |message| %>
+                        <li><%= message %></li>
+                    <% end %>
+                </ul>
+            </div>
+        <% end %>
 
-      <ul>
-      <% @request.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+        <%= f.input :shop_id, input_html: { value: @request.shop_id}, as: :hidden %>
 
-  <%= f.input :shop_id, input_html: { value: @request.shop_id}, as: :hidden %>
+        <ul class="unordered lined">
+            <%= f.input :item_ids, collection: @menu, as: :check_boxes, 
+            :label_method => lambda { |item| 
+                "<li >
+                    <span class=\"pink\">(#{number_to_currency(item.price)})</span> #{item.name}
+                </li>".html_safe }, label: false  %>
+        </ul>
+    </section>
 
-  <ul class="unordered" id="menu">
-    <%= f.input :item_ids, collection: @menu, as: :check_boxes,
-    :label_method => lambda { |item| "<li><span class=\"pink\">(#{number_to_currency(item.price)})</span> #{item.name}</li>".html_safe }, :label => ""  %>
-  </ul>
-
-  <% if @menu.size > 0 %>
-    <div class="actions">
-      <%= f.submit "Order", class: 'button primary' %>
-    </div>
-  <% else %>
-    <p>No items from this location yet... Check back soon!</p>
-  <% end %>
+    <section>
+        <div class="actions">
+            <div id="total_price"><h3>Total: <span class="pink">$0.00</span></h3></div>
+            <%= f.submit "Confirm", class: 'button primary' %>
+            <%= link_to 'Return to home', choose_shop_shops_path(:action_path => new_request_path), class: 'button secondary' %>
+        </div>
+    </section>
 <% end %>
