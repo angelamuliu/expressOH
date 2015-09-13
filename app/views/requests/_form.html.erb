@@ -18,7 +18,11 @@
     :label_method => lambda { |item| "<li><span class=\"pink\">(#{number_to_currency(item.price)})</span> #{item.name}</li>".html_safe }, :label => ""  %>
   </ul>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <% if @menu.size > 0 %>
+    <div class="actions">
+      <%= f.submit "Order", class: 'button primary' %>
+    </div>
+  <% else %>
+    <p>No items from this location yet... Check back soon!</p>
+  <% end %>
 <% end %>

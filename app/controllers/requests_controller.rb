@@ -5,7 +5,7 @@ class RequestsController < ApplicationController
   # GET /requests.json
   def index
     @requests = Request.all
-    @unexpired_requests = Request.requested_within_the_hr(1.hour)
+    @unexpired_requests = Request.requested_within_ the_hr(1.hour)
   end
 
   # GET /requests/1
@@ -37,7 +37,7 @@ class RequestsController < ApplicationController
     respond_to do |format|
       if @item_ids.length > 0 and @request.save
         @request.addItemsToRequest(request_params[:item_ids], @request.id)
-        format.html { redirect_to @request, notice: 'Request was successfully created.' }
+        format.html { redirect_to "/", notice: 'Request was successfully created.' }
         format.json { render :show, status: :created, location: @request }
       else
         if @item_ids.length < 1
