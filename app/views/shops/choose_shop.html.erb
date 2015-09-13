@@ -10,16 +10,20 @@
         <% @shops.each do |shop| %>
             <%# We are passed in an action_path for what we want to do for each shop. Currently 2 cases -> Either start ordering (new_request_path) or browse requests from a shop (browse_requests_requests_path) %>
             <%= link_to params[:action_path] + "?shop_id=" + shop.id.to_s() do %>
-                <div class="location">
-                    <%= image_tag shop.image_url,  height: '100', width: '100' %>
-                    <h5><%= shop.name %></h5>
-                    <h6><%= shop.address %></h6>
-                </div>
+                <li class="location">
+                    <div class="location_image">
+                        <%= image_tag shop.image_url %>
+                    </div>
+                    <div class="location_desc">
+                        <h5><%= shop.name %></h5>
+                        <p><%= shop.address %></p>
+                    </div>
+                </li>
             <% end %>
         <% end %>
         </ul>
     <% end %>
-    
+
     <%= link_to "Return to Home", "/", class: 'button secondary' %>
 
 </section>
