@@ -16,7 +16,7 @@
         <ul class="unordered lined">
             <%= f.input :item_ids, collection: @menu, as: :check_boxes, 
             :label_method => lambda { |item| 
-                "<li>
+                "<li >
                     <span class=\"pink\">(#{number_to_currency(item.price)})</span> #{item.name}
                 </li>".html_safe }, label: false  %>
         </ul>
@@ -24,8 +24,9 @@
 
     <section>
         <div class="actions">
-          <%= f.submit "Confirm", class: 'button primary' %>
-          <%= link_to 'Return to home', choose_shop_shops_path(:action_path => new_request_path), class: 'button secondary' %>
+            <div id="total_price"><h3>Total: <span class="pink">$0.00</span></h3></div>
+            <%= f.submit "Confirm", class: 'button primary' %>
+            <%= link_to 'Return to home', choose_shop_shops_path(:action_path => new_request_path), class: 'button secondary' %>
         </div>
     </section>
 <% end %>
