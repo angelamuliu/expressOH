@@ -13,6 +13,12 @@ class Request < ActiveRecord::Base
     # Scopes
     scope :chronological, order(:created_at)
     scope :requested_within_the_hr, ->(hr_span) { where("created_at > ?", Time.now-hr_span) }
+    scope :for_shop, -> (shop_id) { where("shop_id = ?", shop_id)}
+
+    # Unclaimed scope requires joining on the deliveries table
+    # SOURCE: http://stackoverflow.com/questions/5332093/finding-records-with-no-associated-records-in-rails-3
+    scope :unclaimed, -> {joins("left outer join deliveries on deliveries.request_id = requests.id").where("deliveries.id is null")}
+
 
     # Methods
 
