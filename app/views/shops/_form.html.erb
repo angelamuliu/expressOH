@@ -20,6 +20,10 @@
     <%= f.text_field :address %>
   </div>
   <div class="field">
+    <%= f.label :image_url %><br>
+    <%= f.text_field :image_url %>
+  </div>
+  <div class="field">
     <%= f.label :open_time %><br>
     <%= f.time_select :open_time %>
   </div>
@@ -28,6 +32,6 @@
     <%= f.time_select :close_time %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: 'button primary' %>
   </div>
 <% end %>
