@@ -55,7 +55,7 @@ class Request < ActiveRecord::Base
     end
 
     # Takes in a float and formats to be in currency format
-    def format_cost(cost)
+    def self.format_cost(cost)
         return "$%.2f" % cost
     end
 

@@ -1,8 +1,21 @@
 <section id="your_deliveries">
     <h3>Your deliveries</h3>
-    <% current_user.deliveries.each do |delivery| %>
-        <li>
-            <%= delivery %>
-        </li>
+    <% if @your_deliveries.size < 1 %>
+        <p> You have no deliveries in progress at the moment. </p>
+    <% else %>
+        <ul class="unordered lined">
+        <% @your_deliveries.each do |delivery| %>
+            <li>
+                <h5><span class="pink">(<%= delivery.request.shop.name %>)</span> <%= delivery.request.item_names %></h5>
+                <p>
+                    Cost: <%= Request.format_cost(delivery.request.total_cost()) %> / <span class="pink">Profit: <%= delivery.get_profits() %></span>
+                    <br />
+                    Claimed <%= time_ago_in_words(delivery.created_at) %> ago
+                    <br />
+                    Requested by <%= delivery.request.user.username %> <%= time_ago_in_words(delivery.request.items.first.created_at) %> ago
+                </p>
+            </li>
+        <% end %>
+        </ul>
     <% end %>
 </section>
