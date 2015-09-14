@@ -77,7 +77,8 @@ class RequestsController < ApplicationController
 
   def browse_requests
     @shop = Shop.find(params[:shop_id])
-    @requests = Request.for_shop(@shop.id).unclaimed
+    @requests = Request.for_shop(@shop.id).unclaimed.requested_within_1_hr
+    # @requests = Request.for_shop(@shop.id).unclaimed
   end
 
   # AJAX call when the 'claim' button clicked when a person is looking through requests

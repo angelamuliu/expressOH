@@ -12,7 +12,13 @@ class Request < ActiveRecord::Base
 
     # Scopes
     scope :chronological, order(:created_at)
-    scope :requested_within_the_hr, ->(hr_span) { where("created_at > ?", Time.now-hr_span) }
+
+    # Need to specify "requests" because we do joins later and all tables have created_at
+    scope :requested_within_1_hr, -> {where("requests.created_at > ?", Time.now - 1.hour )}
+
+    # TODO: Fix requested_within_the_hr, currently hr_span not in correct unit and returns nothing
+    # scope :requested_within_the_hr, ->(hr_span) { where("created_at > ?", Time.now-hr_span) }
+    
     scope :for_shop, -> (shop_id) { where("shop_id = ?", shop_id)}
 
     # Unclaimed scope requires joining on the deliveries table

@@ -39,7 +39,6 @@ $(document).ready(function() {
         var item_price = parseFloat(this.querySelector("span").innerHTML.replace(/[($)]/g, ""));
         var total_price_before = parseFloat($("#total_price h3 span")[0].innerHTML.replace(/[($)]/g, ""));
         var updated_price;
-        // debugger;
         if (checked) { // Added a menu item
             updated_price = total_price_before + item_price;
         } else { // Removed a menu item 

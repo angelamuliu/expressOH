@@ -4,4 +4,7 @@ class Delivery < ActiveRecord::Base
 
 	scope :choronological, -> { order("created_at") }
 
+    # Validations
+    validates :request, uniqueness: true
+
 end
