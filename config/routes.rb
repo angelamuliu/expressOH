@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   resources :requests do
     get 'browse_requests', :on => :collection
+    post 'deactivate', :on => :member
   end
   post 'claim_request/:id' => 'requests#claim', as: :claim_request
 

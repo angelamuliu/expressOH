@@ -44,6 +44,7 @@ ul.inline li, ul.inline li:first-child {
 
 body {
     color: $chocolate;
+    font-family: helvetica, sans-serif;
 }
 
 section {
@@ -67,6 +68,11 @@ h4 {
     font-family: ChapparalPro-Regular;
     font-weight: 600;
     color: $mud;
+}
+
+h5 {
+    color: $chocolate;
+    font-weight: 200;
 }
 
 // =====================================================

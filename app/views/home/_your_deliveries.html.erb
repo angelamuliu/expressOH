@@ -1,0 +1,8 @@
+<section id="your_deliveries">
+    <h3>Your deliveries</h3>
+    <% current_user.deliveries.each do |delivery| %>
+        <li>
+            <%= delivery %>
+        </li>
+    <% end %>
+</section>

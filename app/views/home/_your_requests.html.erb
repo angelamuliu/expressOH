@@ -1,0 +1,21 @@
+<section id="your_requests">
+    <h3>Your requests</h3>
+    <ul class="unordered">
+    <% current_user.requests.active.each do |request| %>
+        <li>
+            <h5><span class="pink">(<%= request.shop.name %>)</span> <%= request.item_names %></h5>
+            <p>
+                Requested <%= time_ago_in_words(request.items.first.created_at) %> ago, <%= request.format_cost(request.tipped_total_cost()) %>
+                <br />
+                <% if request.delivery.nil? %>
+                    Unclaimed
+                    <%= button_to "Cancel", deactivate_request_path(request), class: 'button tertiary' %>
+                <% else %>
+                    Being delivered by <%= request.delivery.user.username %>
+                    <%= button_to "Contact deliverer", "/", class: 'button primary'%>
+                <% end %>
+            </p>
+        </li>
+    <% end %>
+    </ul>
+</section>
