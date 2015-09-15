@@ -96,7 +96,7 @@ h5 {
     background-color: $pink;
     border-bottom: 3px solid $cranberry;
 }
-.primary:hover {
+.primary:hover, .primary:focus {
     background-color: $cranberry;
 }
 
@@ -105,7 +105,7 @@ h5 {
     background-color: $milk-coffee;
     border-bottom: 3px solid $mocha;
 }
-.button.secondary:hover {
+.button.secondary:hover, .button.secondary:focus{
     background-color: $mocha;
     color: $light-grey;
 }
@@ -114,7 +114,7 @@ h5 {
     background-color: $mud;
     border-bottom: 3px solid $dark-chocolate;
 }
-.tertiary:hover {
+.tertiary:hover, .tertiary:focus {
     background-color: $dark-chocolate;
 }
 
