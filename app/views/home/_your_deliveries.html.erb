@@ -16,6 +16,7 @@
                     Requested by <%= delivery.request.user.username %> <%= time_ago_in_words(delivery.request.items.first.created_at) %> ago
                     <br />
                     <div class="request_actions">
+                        <%= link_to "Rate", rate_user_path(delivery.request.user.id), class: "fa fa-star", id: 'rating' %>
                         <%= link_to "Close order", close_delivery_path(delivery), class: 'button secondary' %>
                         <%= link_to "Contact requester", "/", class: "button primary" %>
                     </div>
