@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get 'home/index'
 
   resources :deliveries do
-    get 'drop', :on => :member
+    get 'close', :on => :member
   end
 
   resources :request_items

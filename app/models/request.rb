@@ -11,7 +11,7 @@ class Request < ActiveRecord::Base
     validates_presence_of :shop_id
 
     # Scopes
-    scope :chronological, -> {order(:created_at)}
+    scope :chronological, -> {order(created_at: :desc)}
     scope :active, -> { where(active: true) }
 
     # Need to specify "requests" because we do joins later and all tables have created_at

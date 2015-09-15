@@ -61,6 +61,17 @@ class DeliveriesController < ApplicationController
     end
   end
 
+  # Deactivates a delivery
+  def close
+    @delivery = Delivery.find(params[:id])
+    @delivery.active = false
+    @request = @delivery.request
+    @request.active = false
+    @delivery.save!
+    @request.save!
+    redirect_to root_path, notice: 'Delivery has been closed'
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_delivery

@@ -2,7 +2,7 @@ class Delivery < ActiveRecord::Base
 	belongs_to :user
 	belongs_to :request
 
-	scope :chronological, -> { order("created_at") }
+	scope :chronological, -> { order(created_at: :desc) }
 
     # Validations
     validates :request, uniqueness: true
