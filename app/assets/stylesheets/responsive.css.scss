@@ -13,6 +13,14 @@
 // Med/large
 @media only screen and (min-width:30em) {
 
+    section#welcome {
+        text-align: center;
+    }
+    #request_button {
+        display: inline-block;
+        margin-top: 5px;
+    }
+
     .request_actions {
         max-width:500px;
     }

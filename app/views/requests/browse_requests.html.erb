@@ -1,14 +1,19 @@
 
-<section>
-    <h3>Requests for <span class="pink"><%= @shop.name %></span></h3>
+<section class="row">
+    <div class="small-centered small-12 large-8 columns">
+        <h3>Requests for <span class="pink"><%= @shop.name %></span></h3>
+    </div>
 </section>
 
 <% if @requests.size < 1 %>
-    <section>
-        No requests from this location yet... Check back soon!
+    <section class="row">
+        <div class="small-centered small-12 large-8 columns">
+            No requests from this location yet... Check back soon!
+        </div>
     </section>
 <% else %>
-<section id="recent_requests">
+<section id="recent_requests" class="row">
+    <div class="small-centered small-12 large-8 columns">
     <ul class="unordered lined">
     <% @requests.each do |request| %>
         <li id="request_<%= request.id %>">
@@ -30,10 +35,13 @@
         </li>
     <% end %>
     </ul>
+    </div>
 </section>
 <% end %>
 
-<section>
-    <%= link_to 'Return to home', "/", :class => "button secondary" %>
-    <%= link_to 'Back', choose_shop_shops_path(:action_path => browse_requests_requests_path), class: 'button secondary' %>
+<section class="row">
+    <div class="small-centered small-12 large-8 columns">
+        <%= link_to 'Return to home', "/", :class => "button secondary" %>
+        <%= link_to 'Back', choose_shop_shops_path(:action_path => browse_requests_requests_path), class: 'button secondary' %>
+    </div>
 </section>

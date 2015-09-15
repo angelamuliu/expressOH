@@ -1,5 +1,6 @@
 <%= simple_form_for @request do |f| %>
-    <section id="menu">
+    <section id="menu" class="row">
+    <div class="small-centered small-12 large-8 columns">
         <% if @request.errors.any? %>
             <div id="error_explanation">
                 <h2><%= pluralize(@request.errors.count, "error") %> prohibited this request from being saved:</h2>
@@ -20,13 +21,16 @@
                     <span class=\"pink\">(#{number_to_currency(item.tipped_cost)})</span> #{item.name}
                 </li>".html_safe }, label: false  %>
         </ul>
+    </div>
     </section>
 
-    <section>
-        <div class="actions">
-            <div id="total_price"><h3>Total: <span class="pink">$0.00</span></h3></div>
-            <%= f.submit "Confirm", class: 'button primary' %>
-            <%= link_to 'Back', choose_shop_shops_path(:action_path => new_request_path), class: 'button secondary' %>
+    <section class="row">
+        <div class="small-centered small-12 large-8 columns">
+            <div class="actions">
+                <div id="total_price"><h3>Total: <span class="pink">$0.00</span></h3></div>
+                <%= f.submit "Confirm", class: 'button primary' %>
+                <%= link_to 'Back', choose_shop_shops_path(:action_path => new_request_path), class: 'button secondary' %>
+            </div>
         </div>
     </section>
 <% end %>

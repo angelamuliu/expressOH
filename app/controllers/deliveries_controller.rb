@@ -67,6 +67,7 @@ class DeliveriesController < ApplicationController
     @delivery.active = false
     @request = @delivery.request
     @request.active = false
+    puts @delivery
     @delivery.save!
     @request.save!
     redirect_to root_path, notice: 'Delivery has been closed'
