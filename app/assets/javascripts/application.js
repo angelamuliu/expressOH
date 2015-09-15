@@ -18,6 +18,27 @@
 
 $(function(){ $(document).foundation(); });
 
+function update_price(label_element, isCheckbox) { // Called on the new request page when tallying up an order
+    var checked = $(label_element).children("input")[0].checked
+    var item_price = parseFloat(label_element.querySelector("span").innerHTML.replace(/[($)]/g, ""));
+    var total_price_before = parseFloat($("#total_price h3 span")[0].innerHTML.replace(/[($)]/g, ""));
+    var updated_price;
+    if (isCheckbox) { // Checkbox literally pressed, can use checked status logically to add or subtract
+        if (checked) { // Added a menu item
+            updated_price = total_price_before + item_price;
+        } else { // Removed a menu item 
+            updated_price = total_price_before - item_price;
+        }
+    }
+    else { // The text/li next to checkbox pressed, so checkbox won't be checked...
+        if (checked) { // Removed menu item
+            updated_price = total_price_before - item_price;
+        } else { // Added a menu item
+            updated_price = total_price_before + item_price;
+        }
+    }
+        $("#total_price h3 span")[0].innerHTML = "$" + updated_price.toFixed(2);
+}
 
 $(document).ready(function() {
 
@@ -35,17 +56,12 @@ $(document).ready(function() {
 
     // 
     $("#menu label").click(function() {
-        var checked = $(this).children("input")[0].checked
-        var item_price = parseFloat(this.querySelector("span").innerHTML.replace(/[($)]/g, ""));
-        var total_price_before = parseFloat($("#total_price h3 span")[0].innerHTML.replace(/[($)]/g, ""));
-        var updated_price;
-        if (checked) { // Added a menu item
-            updated_price = total_price_before + item_price;
-        } else { // Removed a menu item 
-            updated_price = total_price_before - item_price;
-        }
-        $("#total_price h3 span")[0].innerHTML = "$" + updated_price.toFixed(2);
-    })
+        update_price(this, true)
+    });
+
+    $("#menu li").click(function() {
+        update_price($(this).parent()[0], false);
+    });
 
 })
 

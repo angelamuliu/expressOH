@@ -64,7 +64,7 @@
 
 #your_deliveries .button, #your_requests .button {
     margin: 0;
-    margin-top: 5px;
+    margin-top: 7px;
     margin-bottom: 10px;
     margin-right: 5px;
     float: right;
@@ -84,6 +84,6 @@ div.request_actions:after { // Clear float of button contained inside form
     clear: both;
 }
 
-#your_deliveries form p, #your_requests p {
+#your_deliveries p, #your_requests p {
     margin: 0;
 }
