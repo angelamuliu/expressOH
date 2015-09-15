@@ -11,8 +11,13 @@ class Request < ActiveRecord::Base
     validates_presence_of :shop_id
 
     # Scopes
-    scope :chronological, order(:created_at)
-    scope :requested_within_the_hr, ->(hr_span) { where("created_at > ?", Time.now-hr_span) }
+    scope :chronological, -> {order(created_at: :desc)}
+    scope :active, -> { where(active: true) }
+
+    # Need to specify "requests" because we do joins later and all tables have created_at
+    scope :requested_within_1_hr, -> {where("requests.created_at > ?", Time.now - 1.hour )}
+    scope :requested_within_time, ->(hr_span) { where("created_at > ?", Time.now-hr_span) }
+    
     scope :for_shop, -> (shop_id) { where("shop_id = ?", shop_id)}
 
     # Unclaimed scope requires joining on the deliveries table
@@ -50,8 +55,13 @@ class Request < ActiveRecord::Base
     end
 
     # Takes in a float and formats to be in currency format
-    def format_cost(cost)
+    def self.format_cost(cost)
         return "$%.2f" % cost
+    end
+
+    # Returns all item names belonging to a request as a nicely formatted string
+    def item_names()
+        return items.map { |item| item.name }.join(", ")
     end
 
     # Creates request_items so that items are associated to a request

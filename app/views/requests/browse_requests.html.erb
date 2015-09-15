@@ -13,7 +13,7 @@
     <% @requests.each do |request| %>
         <li id="request_<%= request.id %>">
             <div class="request_info left">
-                <span class="pink">(<%= request.format_cost(request.total_cost) %>)</span>
+                <span class="pink">(<%= Request.format_cost(request.total_cost) %>)</span>
                 <% if request.items.size < 2 %>
                     <%= request.items[0].name%>
                 <% else %>
@@ -35,4 +35,5 @@
 
 <section>
     <%= link_to 'Return to home', "/", :class => "button secondary" %>
+    <%= link_to 'Back', choose_shop_shops_path(:action_path => browse_requests_requests_path), class: 'button secondary' %>
 </section>
