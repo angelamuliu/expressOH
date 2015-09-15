@@ -16,7 +16,7 @@
                     <br />
                     <div class="request_actions">
                         <%= link_to "Close order", close_delivery_path(delivery), class: 'button secondary' %>
-                        <%= link_to "Contact requester", "/", class: "button primary" %>
+                        <%= mail_to delivery.request.user.email, "Contact requester", encode: "javascript", class: 'button primary'%>
                     </div>
                 </p>
             </li>

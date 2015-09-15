@@ -24,7 +24,7 @@
                     </ul>
                 <% end %>
                 <br />
-                <%= request.minute_age() %> by "<%= request.user.username %>" <%= mail_to request.user.email, "(#{request.user.email})", encode: "javascript" %>
+                <%= request.minute_age() %> by "<%= request.user.username %>"
             </div>
             <%= link_to "Claim", claim_request_path(id: request.id, deliverer_id: current_user.id, dom_id: "request_#{request.id}"), remote: true, method: 'post', :class => "button primary right" %>
         </li>
