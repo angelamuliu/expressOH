@@ -97,7 +97,7 @@ class RequestsController < ApplicationController
     @request = Request.find(params[:id])
     @request.active = false
     @request.save!
-    redirect_to root_path, notice: 'Request has been canceled'
+    redirect_to root_path
   end
 
   private

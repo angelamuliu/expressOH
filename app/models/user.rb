@@ -19,4 +19,12 @@ class User < ActiveRecord::Base
 		return rank
 	end
 
+    def cups_requested
+        return requests.inject(0) {|total, request| total + request.items.count }
+    end
+
+    def cups_delivered
+        return deliveries.inject(0) { |total, delivery| total + delivery.request.items.count }
+    end
+
 end

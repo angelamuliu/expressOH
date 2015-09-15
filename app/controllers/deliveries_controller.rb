@@ -70,7 +70,7 @@ class DeliveriesController < ApplicationController
     puts @delivery
     @delivery.save!
     @request.save!
-    redirect_to root_path, notice: 'Delivery has been closed'
+    redirect_to root_path
   end
 
   private

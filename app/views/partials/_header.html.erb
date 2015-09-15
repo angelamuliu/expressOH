@@ -20,7 +20,7 @@
     <ul class="unordered">
         <% if current_user %>
         <li>
-            <a href="#">User settings</a>
+            <%= link_to "User settings", user_path(current_user) %>
         </li>
         <li>
             <a href="/logout">Logout</a>
