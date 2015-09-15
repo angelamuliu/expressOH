@@ -4,16 +4,23 @@
 
 @import "shared_variables";
 
-
 #menu input.check_boxes {
-    float: right;
+    float: left;
+    margin: 0;
+    margin-top: 15px;
+    margin-right: 10px;
 }
 
-#menu {
+section#recent_requests, section#menu {
     background-color: $light-grey;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+#recent_requests .button {
+    margin: 0;
 }
 
-#menu li:after { // Clear float
+#recent_requests li:after, #menu li:after { // Clear float
     content: "."; 
     visibility: hidden; 
     display: block; 
@@ -21,24 +28,20 @@
     clear: both;
 }
 
+#recent_requests ul.inline li:after { 
+    // Don't want to clear float for li elements inside of a nested ul
+    content: initial;
+}
+
+.fa-check {
+    font-size: 25px;
+}
+
 #menu li {
     padding: 10px;
 }
 
 
-// TO FIX: Styling
-// #menu label {
-//     border-bottom: 1px solid red;
-// }
-
-// #menu label:last-child {
-//     border-bottom: initial;
-// }
-
-// #menu:after { // Clear float
-//     content: "."; 
-//     visibility: hidden; 
-//     display: block; 
-//     height: 0; 
-//     clear: both;
-// }
+#total_price {
+    color: black;
+}

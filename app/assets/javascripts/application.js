@@ -33,5 +33,20 @@ $(document).ready(function() {
         })}
     });
 
+    // 
+    $("#menu label").click(function() {
+        var checked = $(this).children("input")[0].checked
+        var item_price = parseFloat(this.querySelector("span").innerHTML.replace(/[($)]/g, ""));
+        var total_price_before = parseFloat($("#total_price h3 span")[0].innerHTML.replace(/[($)]/g, ""));
+        var updated_price;
+        // debugger;
+        if (checked) { // Added a menu item
+            updated_price = total_price_before + item_price;
+        } else { // Removed a menu item 
+            updated_price = total_price_before - item_price;
+        }
+        $("#total_price h3 span")[0].innerHTML = "$" + updated_price.toFixed(2);
+    })
+
 })
 

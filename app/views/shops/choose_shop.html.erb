@@ -1,19 +1,29 @@
 
-<h3>Choose Location</h3>
+<section class="choose-shop">
 
-<% if @shops.empty? %>
-    <p> Sorry! Please check back later. We have not yet entered any shop menus in yet. </p>
-<% else %>
-    <ul class="unordered">
-    <% @shops.each do |shop| %>
-        <%= link_to(new_request_path(:shop_id => shop.id)) do %>
-            <li>
-                <h3><%= shop.name %></h3>
-                <p><%= shop.address %></p>
-            </li>
+    <h3>Choose Location</h3>
+
+    <% if @shops.empty? %>
+        <p> Sorry! Please check back later. We have not yet entered any shop menus in yet. </p>
+    <% else %>
+        <ul class="unordered">
+        <% @shops.each do |shop| %>
+            <%# We are passed in an action_path for what we want to do for each shop. Currently 2 cases -> Either start ordering (new_request_path) or browse requests from a shop (browse_requests_requests_path) %>
+            <%= link_to params[:action_path] + "?shop_id=" + shop.id.to_s() do %>
+                <li class="location">
+                    <div class="location_image">
+                        <%= image_tag shop.image_url %>
+                    </div>
+                    <div class="location_desc">
+                        <h5><%= shop.name %></h5>
+                        <p><%= shop.address %></p>
+                    </div>
+                </li>
+            <% end %>
         <% end %>
+        </ul>
     <% end %>
-    </ul>
-<% end %>
 
-<%= link_to "Return to Home", "www.google.com", class: 'button radius' %> 
+    <%= link_to "Return to Home", "/", class: 'button secondary' %>
+
+</section>

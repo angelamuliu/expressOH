@@ -1,3 +1,44 @@
 // Place all the styles related to the Shops controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "shared_variables";
+
+li.location {
+    border-left: 3px solid $pink;
+    margin-bottom: 10px;
+}
+
+.location_image {
+    float: left;
+    height: 100px;
+    width: 100px;
+    background-color: $paper;
+    border-bottom: 3px solid $medium-grey;
+    margin-right: 10px;
+}
+.location_image img { // Center image in image area
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.location_desc {
+    transition: background-color 0.3s ease;
+    padding: 10px;
+    height: 100px;
+    color: $chocolate;
+    background-color: $light-grey;
+    border-bottom: 3px solid $medium-grey;
+}
+.location_desc:hover {
+    background-color: $paper;
+}
+
+.choose-shop {
+	h5 {
+        font-family: ChapparalPro-Regular;
+		display: inline;
+		color: $pink;
+	}
+}

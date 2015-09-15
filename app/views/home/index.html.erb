@@ -2,8 +2,8 @@
 <% if current_user %>
     <section id="welcome">
         <h3>Welcome <%= current_user.username %>!</h3>
-        <%= link_to "Request an Order", choose_shop_shops_path, class: 'button', id: 'request_button' %>
-        <%= button_to "Claim an Order", "#", class: 'button', id: 'claim_button' %>
+        <%= link_to "Request an Order", choose_shop_shops_path(:action_path => new_request_path), class: 'button primary', id: 'request_button' %>
+        <%= link_to "Claim an Order", choose_shop_shops_path(:action_path => browse_requests_requests_path), class: 'button tertiary', id: 'claim_button' %>
     </section>
 
     <section id="your_requests">
@@ -29,6 +29,11 @@
 
     <section id="your_deliveries">
         <h3>Your deliveries</h3>
+        <% current_user.deliveries.each do |delivery| %>
+            <li>
+                <%= delivery %>
+            </li>
+        <% end %>
     </section>
 <% else %>
     <div class="bean-background"></div>
@@ -37,10 +42,29 @@
             <h2>Need Coffee? <br />
                 No time?</h2>
             <h3>Let's fix that.</h3>
-            <%= link_to "Sign Up", new_user_path, class: 'button', id: 'request_button' %>
-            <%= button_to "Login", "/login", class: 'button', id: 'claim_button' %>
+            <%= link_to "Sign Up", new_user_path, class: "button primary", id: "request_button" %>
+
+            <%= button_to "Login", "/login", class: 'button tertiary', id: 'login_button' %>
         </section>
     </div>
+
+    <section id="faq">
+        <h4>I need coffee.</h4>
+        <ol>
+            <li>Request coffee</li>
+            <li>Wait for someone to claim</li>
+            <li>Meet to recieve coffee</li>
+            <li>Pay in cash</li>
+        </ol>
+
+        <h4>I want to make money.</h4>
+        <ol>
+            <li>Claim requests on expressOH!</li>
+            <li>Buy claimed orders</li>
+            <li>Meet with recipient</li>
+            <li>Get paid cash by recipient</li>
+        </ol>
+    </section>
 
 
 <% end %>

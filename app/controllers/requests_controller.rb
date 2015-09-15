@@ -5,7 +5,7 @@ class RequestsController < ApplicationController
   # GET /requests.json
   def index
     @requests = Request.all
-    @unexpired_requests = Request.requested_within_the_hr(1.hour)
+    @unexpired_requests = Request.requested_within_ the_hr(1.hour)
   end
 
   # GET /requests/1
@@ -37,7 +37,7 @@ class RequestsController < ApplicationController
     respond_to do |format|
       if @item_ids.length > 0 and @request.save
         @request.addItemsToRequest(request_params[:item_ids], @request.id)
-        format.html { redirect_to @request, notice: 'Request was successfully created.' }
+        format.html { redirect_to "/", notice: 'Request was successfully created.' }
         format.json { render :show, status: :created, location: @request }
       else
         if @item_ids.length < 1
@@ -73,6 +73,24 @@ class RequestsController < ApplicationController
       format.html { redirect_to requests_url, notice: 'Request was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def browse_requests
+    @shop = Shop.find(params[:shop_id])
+    @requests = Request.for_shop(@shop.id).unclaimed
+  end
+
+  # AJAX call when the 'claim' button clicked when a person is looking through requests
+  def claim
+    request = Request.find(params[:id])
+    deliverer = User.find(params[:deliverer_id])
+    @dom_id = params[:dom_id]
+
+    # Create delivery with current_user and request
+    @delivery = Delivery.new
+    @delivery.request = request
+    @delivery.user = deliverer
+    @delivery.save!
   end
 
   private

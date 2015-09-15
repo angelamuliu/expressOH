@@ -14,6 +14,25 @@ ul.unordered {
     list-style: none;
     margin: 0;
 }
+ul.lined {
+    border-top: 1px solid $cream;
+}
+ul.lined li {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    border-bottom: 1px solid $granite;
+}
+
+ul.inline { 
+    display: inline; 
+    margin: 0;
+}
+ul.inline li, ul.inline li:first-child {
+    border: none;
+    display: inline;
+    list-style: none;
+    margin: 0;
+}
 
 .hidden {
     display: none;
@@ -28,7 +47,7 @@ body {
 }
 
 section {
-    padding: 10px;
+    padding: 15px;
 }
 
 h2 {
@@ -41,7 +60,53 @@ h2 {
 h3 {
     letter-spacing: 1px;
     font-family: ChapparalPro-Regular;
-    color: $cream;
+    color: $mud;
+}
+
+h4 {
+    font-family: ChapparalPro-Regular;
+    font-weight: 600;
+    color: $mud;
+}
+
+// =====================================================
+// BUTTON STYLES
+// =====================================================
+
+.button {
+    transition: background-color 0.3s ease;
+    padding: 0.5rem;
+    color: white;
+    border: none;
+}
+.button:hover {
+    color: $light-grey;
+}
+
+.primary {
+    background-color: $pink;
+    border-bottom: 3px solid $cranberry;
+}
+.primary:hover {
+    background-color: $cranberry;
+}
+
+.button.secondary {
+    color: white;
+    background-color: $milk-coffee;
+    border-bottom: 3px solid $mocha;
+}
+.button.secondary:hover {
+    background-color: $mocha;
+    color: $light-grey;
+}
+
+.tertiary {
+    background-color: $mud;
+    border-bottom: 3px solid $dark-chocolate;
+}
+.tertiary:hover {
+    background-color: $dark-chocolate;
 }
 
 // =====================================================
@@ -108,13 +173,28 @@ nav ul { margin: 0; }
 #gear_nav a:hover { color: $cranberry; }
 
 
+// =====================================================
+// FORMS
+// =====================================================
+
+.field_with_errors {
+    background-color: $pale-pink;
+}
+
 
 // =====================================================
 // FOOTER
 // =====================================================
 
 #footer {
+    padding-top: 25px;
     background-color: $chocolate;
+    min-height: 150px;
+    text-align: center;
+}
+
+#footer a {
+    color: $cream;
 }
 
 
