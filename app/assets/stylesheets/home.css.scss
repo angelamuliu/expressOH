@@ -4,32 +4,11 @@
 
 @import "shared_variables";
 
-#welcome {
-    background-color: $light-grey;
-}
 
-#login_button {
-	background-color: $mud;
-    border-bottom: 3px solid $dark-chocolate;
-	width: 100%;
-	display: block;
-}
-#login_button:hover {
-    background-color: $dark-chocolate;
-}
+// =====================================================
+// INTRODUCTION
+// =====================================================
 
-#request_button {
-	margin-top: 25px;
-	width: 100%;
-	display: block;
-}
-#claim_button {
-    width: 100%;
-}
-
-#your_deliveries {
-    background-color: $light-grey;
-}
 
 .bean-background {
     width: 100%;
@@ -38,8 +17,31 @@
     background-image: url("fadedbeans_med.jpg");
 }
 
+#welcome {
+    background-color: $light-grey;
+}
+
+#login_button {
+    background-color: $mud;
+    border-bottom: 3px solid $dark-chocolate;
+    width: 100%;
+    display: block;
+}
+#login_button:hover {
+    background-color: $dark-chocolate;
+}
+
+#request_button {
+    margin-top: 25px;
+    width: 100%;
+    display: block;
+}
+#claim_button {
+    width: 100%;
+}
+
 .intro {
-	position: relative;
+    position: relative;
 }
 .intro section {
     padding: 25px;
@@ -49,4 +51,39 @@
 }
 .intro h3 {
     color: $cream;
+}
+
+
+// =====================================================
+// YOUR REQUESTS / DELIVERIES SECTION
+// =====================================================
+
+#your_deliveries {
+    background-color: $light-grey;
+}
+
+#your_deliveries .button, #your_requests .button {
+    margin: 0;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    margin-right: 5px;
+    float: right;
+    font-size: 12px;
+}
+#your_deliveries .button, #your_requests .button {
+}
+#your_deliveries .button:first-child, #your_requests .button:first-child {
+    margin-right: 0;
+}
+
+div.request_actions:after { // Clear float of button contained inside form
+    content: "."; 
+    visibility: hidden; 
+    display: block; 
+    height: 0; 
+    clear: both;
+}
+
+#your_deliveries form p, #your_requests p {
+    margin: 0;
 }

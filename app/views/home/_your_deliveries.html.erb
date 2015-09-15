@@ -13,6 +13,11 @@
                     Claimed <%= time_ago_in_words(delivery.created_at) %> ago
                     <br />
                     Requested by <%= delivery.request.user.username %> <%= time_ago_in_words(delivery.request.items.first.created_at) %> ago
+                    <br />
+                    <div class="request_actions">
+                        <%= link_to "Drop order", "/", class: 'button secondary' %>
+                        <%= link_to "Contact requester", "/", class: "button primary" %>
+                    </div>
                 </p>
             </li>
         <% end %>

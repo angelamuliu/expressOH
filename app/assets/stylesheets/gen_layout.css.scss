@@ -22,6 +22,9 @@ ul.lined li {
     padding-bottom: 1em;
     border-bottom: 1px solid $granite;
 }
+ul.lined li:last-child {
+    border:none;
+}
 
 ul.inline { 
     display: inline; 

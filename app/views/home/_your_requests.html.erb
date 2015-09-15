@@ -10,13 +10,15 @@
                 <p>
                     Requested <%= time_ago_in_words(request.items.first.created_at) %> ago, <%= Request.format_cost(request.tipped_total_cost()) %>
                     <br />
-                    <% if request.delivery.nil? %>
-                        Unclaimed
-                        <%= button_to "Cancel", deactivate_request_path(request), class: 'button tertiary' %>
-                    <% else %>
-                        Being delivered by <%= request.delivery.user.username %>
-                        <%= button_to "Contact deliverer", "/", class: 'button primary'%>
-                    <% end %>
+                    <div class="request_actions">
+                        <% if request.delivery.nil? %>
+                            Unclaimed
+                            <%= link_to "Cancel", deactivate_request_path(request), class: 'button secondary' %>
+                        <% else %>
+                            Being delivered by <%= request.delivery.user.username %>
+                                <%= link_to "Contact deliverer", "/", class: 'button primary'%>
+                        <% end %>
+                    </div>
                 </p>
             </li>
         <% end %>
