@@ -5,7 +5,7 @@ class RequestsController < ApplicationController
   # GET /requests.json
   def index
     @requests = Request.all
-    @unexpired_requests = Request.requested_within_ the_hr(1.hour)
+    @unexpired_requests = Request.requested_within_time(1.hour)
   end
 
   # GET /requests/1
@@ -77,8 +77,7 @@ class RequestsController < ApplicationController
 
   def browse_requests
     @shop = Shop.find(params[:shop_id])
-    @requests = Request.for_shop(@shop.id).unclaimed.requested_within_1_hr
-    # @requests = Request.for_shop(@shop.id).unclaimed
+    @requests = Request.for_shop(@shop.id).active.unclaimed.requested_within_1_hr.chronological
   end
 
   # AJAX call when the 'claim' button clicked when a person is looking through requests
@@ -92,6 +91,13 @@ class RequestsController < ApplicationController
     @delivery.request = request
     @delivery.user = deliverer
     @delivery.save!
+  end
+
+  def deactivate
+    @request = Request.find(params[:id])
+    @request.active = false
+    @request.save!
+    redirect_to root_path, notice: 'Request has been canceled'
   end
 
   private

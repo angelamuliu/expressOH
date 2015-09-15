@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   get 'home/index'
 
-  resources :deliveries
+  resources :deliveries do
+    get 'close', :on => :member
+  end
 
   resources :request_items
 
@@ -13,6 +15,7 @@ Rails.application.routes.draw do
 
   resources :requests do
     get 'browse_requests', :on => :collection
+    get 'deactivate', :on => :member
   end
   post 'claim_request/:id' => 'requests#claim', as: :claim_request
 

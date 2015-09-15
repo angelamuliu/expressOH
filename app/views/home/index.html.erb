@@ -6,35 +6,9 @@
         <%= link_to "Claim an Order", choose_shop_shops_path(:action_path => browse_requests_requests_path), class: 'button tertiary', id: 'claim_button' %>
     </section>
 
-    <section id="your_requests">
-        <h3>Your requests</h3>
-        <ul class="unordered">
-        <% current_user.requests.each do |request| %>
-            <li><span class="pink">(<%= request.shop.name %>)</span> 
-            <% if request.items.length == 1%>
-                <%= request.items.first.name %>
-                <%= "Requested " + time_ago_in_words(request.items.first.created_at) + ' ago' %>
-                <%= request.delivery.nil? ? 'Unclaimed' : "Being delivered by: " + request.delivery.user.username %>
-            <% else %>
-                <% request.items.each do |item| %>
-                    <%= item.name %>
-                    <%= "Requested " + time_ago_in_words(item.created_at) + ' ago' %>
-                    <%= request.delivery.nil? ? 'Unclaimed' : "Being delivered by: " + request.delivery.user.username %>
-                <% end %>
-            <% end %>
-            </li>
-        <% end %>
-        </ul>
-    </section>
+    <%= render :partial => "your_requests" %>
+    <%= render :partial => "your_deliveries" %>
 
-    <section id="your_deliveries">
-        <h3>Your deliveries</h3>
-        <% current_user.deliveries.each do |delivery| %>
-            <li>
-                <%= delivery %>
-            </li>
-        <% end %>
-    </section>
 <% else %>
     <div class="bean-background"></div>
     <div class="intro">

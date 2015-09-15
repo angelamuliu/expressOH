@@ -22,6 +22,9 @@ ul.lined li {
     padding-bottom: 1em;
     border-bottom: 1px solid $granite;
 }
+ul.lined li:last-child {
+    border:none;
+}
 
 ul.inline { 
     display: inline; 
@@ -44,6 +47,7 @@ ul.inline li, ul.inline li:first-child {
 
 body {
     color: $chocolate;
+    font-family: helvetica, sans-serif;
 }
 
 section {
@@ -69,6 +73,11 @@ h4 {
     color: $mud;
 }
 
+h5 {
+    color: $chocolate;
+    font-weight: 200;
+}
+
 // =====================================================
 // BUTTON STYLES
 // =====================================================
@@ -87,7 +96,7 @@ h4 {
     background-color: $pink;
     border-bottom: 3px solid $cranberry;
 }
-.primary:hover {
+.primary:hover, .primary:focus {
     background-color: $cranberry;
 }
 
@@ -96,7 +105,7 @@ h4 {
     background-color: $milk-coffee;
     border-bottom: 3px solid $mocha;
 }
-.button.secondary:hover {
+.button.secondary:hover, .button.secondary:focus{
     background-color: $mocha;
     color: $light-grey;
 }
@@ -105,7 +114,7 @@ h4 {
     background-color: $mud;
     border-bottom: 3px solid $dark-chocolate;
 }
-.tertiary:hover {
+.tertiary:hover, .tertiary:focus {
     background-color: $dark-chocolate;
 }
 
