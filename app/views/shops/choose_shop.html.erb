@@ -4,7 +4,7 @@
     <h3>Choose Location</h3>
 
     <% if @shops.empty? %>
-        <p> Sorry! Please check back later. We have not yet entered any shop menus in yet. </p>
+        <p> Sorry! Please check back later. All shops are closed at the moment. </p>
     <% else %>
         <ul class="unordered">
         <% @shops.each do |shop| %>
@@ -23,6 +23,8 @@
         <% end %>
         </ul>
     <% end %>
+
+    <%= render :partial => "shop_times" %>
 
     <%= link_to "Return to Home", "/", class: 'button secondary' %>
     </div>

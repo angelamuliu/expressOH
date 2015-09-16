@@ -63,7 +63,8 @@ class ShopsController < ApplicationController
 
   # A page where a user chooses a shop and then is later redirected to choosing items to order
   def choose_shop
-    @shops = Shop.all
+    @shops = Shop.active.open.alphabetical
+    @closed_shops = Shop.active.closed.alphabetical
   end
 
 
@@ -75,6 +76,6 @@ class ShopsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def shop_params
-      params.require(:shop).permit(:name, :address, :open_time, :close_time, :image_url)
+      params.require(:shop).permit(:name, :address, :open_time, :close_time, :image_url, :active)
     end
 end

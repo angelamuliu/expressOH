@@ -7,7 +7,7 @@
         <ul class="unordered lined">
             <li><span class="pink">Username: </span><%= @user.username %></li>
             <li><span class="pink">Email: </span><%= @user.email %></li>
-            <li><span class="pink"><i class="fa fa-star"></i> Your Rating: </span><%= @user.ranking %>
+            <li><span class="pink"><i class="fa fa-star"></i> Your Rating: </span><%= @user.ranking %> / 5.0
             <li><span class="pink">Open requests: </span> <%= @user.requests.active.count %></li>
             <li><span class="pink">Open deliveries: </span> <%= @user.deliveries.active.count %></li>
         </ul>
@@ -17,7 +17,7 @@
 
 <section id="extra_info" class="row">
     <div class="small-centered small-12 large-8 columns">
-        <h5>Since joining on <%= time_ago_in_words(@user.created_at) %> ago you have...</h5>
+        <h5>Since joining <%= time_ago_in_words(@user.created_at) %> ago you have...</h5>
 
         <ul class="unordered lined">
             <li><h5><i class="fa fa-coffee"></i> Requested <%= @user.cups_requested %> items</h5> </li>
