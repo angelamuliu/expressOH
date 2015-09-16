@@ -63,8 +63,8 @@ class ShopsController < ApplicationController
 
   # A page where a user chooses a shop and then is later redirected to choosing items to order
   def choose_shop
-    @shops = Shop.active.open.alphabetical
-    @closed_shops = Shop.active.closed.alphabetical
+    @shops = Shop.open(Shop.active.alphabetical)
+    @closed_shops = Shop.closed(Shop.active.alphabetical)
   end
 
 

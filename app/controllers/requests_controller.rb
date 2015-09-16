@@ -19,7 +19,7 @@ class RequestsController < ApplicationController
     @request.shop_id = params[:shop_id]
 
     @shop = Shop.find(params[:shop_id])
-    @menu = @shop.items
+    @menu = @shop.items.alphabetical
   end
 
   # GET /requests/1/edit

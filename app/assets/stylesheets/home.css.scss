@@ -21,9 +21,11 @@
     background-color: $light-grey;
 }
 
-#rating {
-    margin-top: 15px;
+.rating {
     color: $pink;
+}
+.rating:hover {
+    color: $cranberry;
 }
 
 #login_button {

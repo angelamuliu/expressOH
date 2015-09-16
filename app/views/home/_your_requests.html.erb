@@ -22,6 +22,12 @@
                             <%= link_to "Cancel", deactivate_request_path(request), class: 'button secondary' %>
                         <% else %>
                             Being delivered by <%= request.delivery.user.username %> (<%= request.delivery.user.ranking %> / 5.0 rating)
+                            
+                            <br />
+                            <%= link_to rate_user_path(request.delivery.user.id), class: 'rating' do %>
+                                <i class="fa fa-star">Rate <%= request.delivery.user.username %></i>
+                            <% end %>
+                            
                             <%= mail_to request.delivery.user.email, "Contact requester", encode: "javascript", class: 'button primary'%>
                         <% end %>
                     </div>
