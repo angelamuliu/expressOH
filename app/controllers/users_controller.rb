@@ -49,6 +49,7 @@ class UsersController < ApplicationController
       if user_params[:total_rating]
         new_total_rating = @user.total_rating + user_params[:total_rating].to_i
         @user.update_attributes(total_rating: new_total_rating, times_ranked: @user.times_ranked += 1)
+        format.html { redirect_to home_index_path }
       end
       if @user.update(user_params.except(:total_rating))
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
