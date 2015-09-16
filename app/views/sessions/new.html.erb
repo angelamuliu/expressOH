@@ -1,12 +1,14 @@
 
-<section>
-    <h3>Login</h3>
+<section class="row">
+    <div class="small-centered small-12 large-8 columns">
+        <h3>Login</h3>
 
-    <%= form_tag '/login' do %>
+        <%= form_tag '/login' do %>
 
-      Email: <%= text_field_tag :email %>
-      Password: <%= password_field_tag :password %>
-      <%= submit_tag "Login", class: 'button primary' %>
+          Email: <%= text_field_tag :email %>
+          Password: <%= password_field_tag :password %>
+          <%= submit_tag "Login", class: 'button primary' %>
 
-    <% end %>
+        <% end %>
+    </div>
 </section>

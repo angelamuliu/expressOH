@@ -9,11 +9,13 @@
 <% else %>
     <section class="row">
         <div class="small-centered small-12 large-8 columns">
-            <p>
-                No items from this location yet... Check back soon!
-                <br />
-                <%= link_to 'Back', choose_shop_shops_path(:action_path => new_request_path), class: 'button secondary' %>
-            </p>
+            No items from this location yet... Check back soon!
+        </div>
+    </section>
+    <section class="row">
+        <div class="small-centered small-12 large-8 columns">
+            <%= link_to 'Return to home', "/", :class => "button secondary" %>
+            <%= link_to 'Back', choose_shop_shops_path(:action_path => new_request_path), class: 'button secondary' %>
         </div>
     </section>
 <% end %>
