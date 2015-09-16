@@ -16,7 +16,10 @@
                     </div>
                     <div class="location_desc">
                         <h5><%= shop.name %></h5>
-                        <p><%= shop.address %></p>
+                        <p>
+                            <%= shop.address %><br />
+                            Open <%= shop.get_hours %>
+                        </p>
                     </div>
                 </li>
             <% end %>

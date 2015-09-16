@@ -20,4 +20,9 @@ class Shop < ActiveRecord::Base
 
   #Methods
 
+  # Prettily returns the open to close hours as a string
+  def get_hours
+    return open_time.strftime("%l:%M%P") + " - " + close_time.strftime("%l:%M%P")
+  end
+
 end

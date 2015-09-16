@@ -1,6 +1,10 @@
-
-<ul class="unordered">
-<% @closed_shops.each do |shop| %>
-    <li><%= shop.name %></li>
+<% if @closed_shops.size > 0 %>
+    <h5>Currently closed</h5>
+    <ul class="unordered lined">
+    <% @closed_shops.each do |shop| %>
+        <li>
+            <%= shop.name %> (Open <%= shop.get_hours %>)
+        </li>
+    <% end %>
+    </ul>
 <% end %>
-</ul>
