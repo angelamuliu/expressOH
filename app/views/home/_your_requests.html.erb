@@ -21,8 +21,8 @@
                             Unclaimed
                             <%= link_to "Cancel", deactivate_request_path(request), class: 'button secondary' %>
                         <% else %>
-                            Being delivered by <%= request.delivery.user.username %>
-                                <%= link_to "Contact deliverer", "/", class: 'button primary'%>
+                            Being delivered by <%= request.delivery.user.username %> (<%= request.delivery.user.ranking %> / 5.0 rating)
+                            <%= link_to "Contact deliverer", "/", class: 'button primary'%>
                         <% end %>
                     </div>
                 </p>

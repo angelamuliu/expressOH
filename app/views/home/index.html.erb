@@ -12,32 +12,36 @@
 <% else %>
     <div class="bean-background"></div>
     <div class="intro">
-        <section>
-            <h2>Need Coffee? <br />
-                No time?</h2>
-            <h3>Let's fix that.</h3>
-            <%= link_to "Sign Up", new_user_path, class: "button primary", id: "request_button" %>
+        <section class="row">
+            <div class="small-centered small-12 large-8 columns">
+                <h2>Need Coffee? <br />
+                    No time?</h2>
+                <h3>Let's fix that.</h3>
+                <%= link_to "Sign Up", new_user_path, class: "button primary", id: "request_button" %>
 
-            <%= button_to "Login", "/login", class: 'button tertiary', id: 'login_button' %>
+                <%= button_to "Login", "/login", class: 'button tertiary', id: 'login_button' %>
+            </div>
         </section>
     </div>
 
-    <section id="faq">
-        <h4>I need coffee.</h4>
-        <ol>
-            <li>Request coffee</li>
-            <li>Wait for someone to claim</li>
-            <li>Meet to recieve coffee</li>
-            <li>Pay in cash</li>
-        </ol>
+    <section id="faq" class="row">
+        <div class="small-centered small-12 large-8 columns">
+            <h4>I need coffee.</h4>
+            <ol>
+                <li>Request coffee</li>
+                <li>Wait for someone to claim</li>
+                <li>Meet to recieve coffee</li>
+                <li>Pay in cash</li>
+            </ol>
 
-        <h4>I want to make money.</h4>
-        <ol>
-            <li>Claim requests on expressOH!</li>
-            <li>Buy claimed orders</li>
-            <li>Meet with recipient</li>
-            <li>Get paid cash by recipient</li>
-        </ol>
+            <h4>I want to make money.</h4>
+            <ol>
+                <li>Claim requests on expressOH!</li>
+                <li>Buy claimed orders</li>
+                <li>Meet with recipient</li>
+                <li>Get paid cash by recipient</li>
+            </ol>
+        </div>
     </section>
 
 
